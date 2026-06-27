@@ -3,138 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بلسم الشفاء للتمريض المنزلي</title>
+    <title>بلسم الشفاء</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script>
+        function toggleOtherService() {
+            const select = document.getElementById('service');
+            const otherDiv = document.getElementById('other-service-div');
+            if (select.value === 'أخرى') {
+                otherDiv.classList.remove('hidden');
+            } else {
+                otherDiv.classList.add('hidden');
+            }
+        }
+
         function getCurrentLocation() {
             const statusBtn = document.getElementById('location-btn');
             if (navigator.geolocation) {
                 statusBtn.innerText = "⏳ جاري تحديد الموقع...";
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
-                        const lat = position.coords.latitude;
-                        const lng = position.coords.longitude;
-                        const geoUrl = `https://www.google.com/maps?q=${lat},${lng}`;
+                        const geoUrl = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
                         document.getElementById('location_url').value = geoUrl;
-                        statusBtn.innerText = "✅ تم تحديد الموقع بنجاح";
-                        statusBtn.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-200');
-                        statusBtn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200');
+                        statusBtn.innerText = "✅ تم تحديد الموقع";
                     },
-                    (error) => {
-                        statusBtn.innerText = "❌ فشل التحديد تلقائياً، يرجى كتابة العنوان";
-                    }
+                    () => { statusBtn.innerText = "❌ تعذر تحديد الموقع"; }
                 );
-            } else {
-                statusBtn.innerText = "❌ المتصفح لا يدعم تحديد الموقع";
             }
         }
 
         function sendToWhatsApp(event) {
             event.preventDefault();
-            
-            const patientName = document.getElementById('patient_name').value;
-            const service = document.getElementById('service').value;
-            const condition = document.getElementById('condition').value;
-            const symptoms = document.getElementById('symptoms').value;
-            const address = document.getElementById('address').value;
-            const locationUrl = document.getElementById('location_url').value;
-            
-            const phone = "962789188998"; 
-
-            let message = `🚨 *طلب رعاية تمريضية جديدة - منصة بلسم الشفاء* 🚨\n\n` +
-                          `👤 *اسم المريض:* ${patientName}\n` +
-                          `🩺 *الخدمة المطلوبة:* ${service}\n` +
-                          `📊 *تقييم الوضع الحالي:* ${condition}\n` +
-                          `📝 *الأعراض والملاحظات:* ${symptoms || 'لا يوجد'}\n` +
-                          `📍 *العنوان السكني:* ${address}\n`;
-
-            if (locationUrl) {
-                message += `🗺️ *رابط الموقع الجغرافي:* ${locationUrl}\n`;
-            }
-
-            message += `\n📥 _تم الفرز والتقييم تلقائياً عبر النظام الذكي للمنصة._`;
-
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+            const service = document.getElementById('service').value === 'أخرى' ? document.getElementById('other_service').value : document.getElementById('service').value;
+            const message = `🚨 طلب رعاية: ${document.getElementById('patient_name').value}\n🩺 الخدمة: ${service}\n📊 الحالة: ${document.getElementById('condition').value}\n📝 ملاحظات: ${document.getElementById('symptoms').value}\n📍 العنوان: ${document.getElementById('address').value}\n🗺️ ${document.getElementById('location_url').value}`;
+            window.open(`https://wa.me/962789188998?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-800 font-sans text-sm">
 
-    <header class="bg-white shadow-xs sticky top-0 z-50 border-b border-slate-100">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-xl font-black text-emerald-600 tracking-tight">بلسم الشفاء</div>
-            <span class="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-bold border border-emerald-100">نظام الفرز السريري التفاعلي</span>
-        </div>
-    </header>
-
-    <main class="max-w-xl mx-auto px-4 py-10">
-        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xs border border-slate-100">
-            <h1 class="text-xl font-black text-slate-900 mb-2 text-center">تقييم الحالة وطلب الرعاية المنزلية</h1>
-            <p class="text-xs text-slate-500 mb-6 text-center leading-relaxed">يرجى إدخال البيانات الطبية الأساسية لمساعدة الطاقم التمريضي المشرف على اتخاذ القرار السريع وتجهيز المعدات اللازمة قبل الزيارة.</p>
+    <main class="max-w-md mx-auto p-4">
+        <h1 class="text-lg font-bold text-center mb-4 text-emerald-700">بلسم الشفاء</h1>
+        <form onsubmit="sendToWhatsApp(event)" class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 space-y-4">
             
-            <form onsubmit="sendToWhatsApp(event)" class="space-y-5">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">اسم المريض الكامل (أو صلة القرابة):</label>
-                    <input type="text" id="patient_name" required placeholder="مثال: أحمد علي / والدتي" 
-                           class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
-                </div>
+            <input type="text" id="patient_name" required placeholder="اسم المريض" class="w-full p-2.5 border rounded-lg">
 
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">نوع الخدمة التمريضية المطلوبة:</label>
-                    <select id="service" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
-                        <option value="العناية بالجروح وقرح الفراش">العناية بالجروح المزمنة وقرح الفراش</option>
-                        <option value="تركيب أو تغيير قسطرة بولية">تركيب أو تغيير القسطرة البولية (Urinary Catheter)</option>
-                        <option value="إعطاء أدوية ومحاليل وريدية">إعطاء العلاجات والمحاليل الوريدية (IV Infusion)</option>
-                        <option value="سحب عينات دم وفحوصات مخبرية">سحب عينات الدم والفحوصات المخبرية المنزلية</option>
-                        <option value="متابعة علامات حيوية ورعاية دورية">رعاية دورية ومراقبة العلامات الحيوية لكبار السن</option>
-                    </select>
-                </div>
+            <select id="service" onchange="toggleOtherService()" class="w-full p-2.5 border rounded-lg text-slate-600">
+                <option value="العناية بالجروح">العناية بالجروح وقرح الفراش</option>
+                <option value="قسطرة بولية">تركيب قسطرة بولية</option>
+                <option value="إبر ومحاليل">إعطاء إبر ومحاليل وريدية</option>
+                <option value="سحب دم">سحب عينات دم</option>
+                <option value="علامات حيوية">متابعة علامات حيوية</option>
+                <option value="علاج طبيعي">جلسات علاج طبيعي</option>
+                <option value="رعاية مرضى سكري">رعاية مرضى السكري</option>
+                <option value="أخرى">أخرى (يرجى الكتابة)</option>
+            </select>
 
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">الوضع الصحي العام الحالي:</label>
-                    <select id="condition" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
-                        <option value="🟢 حالة مستقرة تماماً (غيار دوري أو زيارة مجدولة)">🟢 حالة مستقرة تماماً (غيار دوري أو زيارة مجدولة)</option>
-                        <option value="🟡 حالة شبه مستقرة (متابعة دقيقة بعد الخروج من المستشفى)">🟡 حالة شبه مستقرة (متابعة دقيقة بعد الخروج من المستشفى)</option>
-                        <option value="🟠 حالة غير مستقرة (تستدعي طاقم تمريضي بشكل عاجل)">🟠 حالة غير مستقرة (تستدعي طاقم تمريضي بشكل عاجل)</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">أعراض خاصة أو ملاحظات طبية (إن وجدت):</label>
-                    <textarea id="symptoms" rows="2" placeholder="مثال: مريض سكري، وجود احمرار حول الجرح، صعوبة حركة..." 
-                              class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50 resize-none"></textarea>
-                </div>
-
-                <div class="pt-2 border-t border-slate-100">
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">العنوان السكني بالتفصيل (المحافظة والمنطقة):</label>
-                    <input type="text" id="address" required placeholder="المحافظة، المدينة، الشارع، معلَم بارز" 
-                           class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50 mb-2">
-                    
-                    <input type="hidden" id="location_url" value="">
-                    <button type="button" id="location-btn" onclick="getCurrentLocation()" 
-                            class="w-full py-2 px-3 border border-blue-200 bg-blue-50/50 hover:bg-blue-50 text-blue-700 text-xs font-bold rounded-lg transition duration-150 flex items-center justify-center gap-2 cursor-pointer">
-                        📍 اضغط هنا لإرفاق موقع المنزل الحالي عبر الخريطة تلقائياً
-                    </button>
-                </div>
-
-                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl transition duration-200 text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-100 cursor-pointer mt-4">
-                    <span>إرسال تقرير الفرز الفوري عبر واتساب</span>
-                </button>
-            </form>
-        </div>
-
-        <div class="mt-8 grid grid-cols-1 gap-3 text-center">
-            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
-                <p class="text-xs font-bold text-slate-900 mb-0.5">🛡️ طواقم مرخصة ومؤهلة</p>
-                <p class="text-[11px] text-slate-500">كافة خدماتنا تقدم عبر ممرضين قانونيين مرخصين ومؤهلين علمياً وعملياً.</p>
+            <div id="other-service-div" class="hidden">
+                <input type="text" id="other_service" placeholder="اكتب الخدمة المطلوبة..." class="w-full p-2.5 border rounded-lg border-emerald-300">
             </div>
-            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
-                <p class="text-xs font-bold text-slate-900 mb-0.5">🩺 إدارة طبية وتمريضية دقيقة</p>
-                <p class="text-[11px] text-slate-500">إشراف ومتابعة مستمرة للخطط العلاجية لضمان أعلى معايير السلامة ومكافحة العدوى.</p>
-            </div>
-        </div>
+
+            <select id="condition" class="w-full p-2.5 border rounded-lg">
+                <option value="مستقرة">حالة مستقرة</option>
+                <option value="شبه مستقرة">حالة شبه مستقرة</option>
+                <option value="غير مستقرة">حالة غير مستقرة</option>
+            </select>
+
+            <textarea id="symptoms" placeholder="ملاحظات طبية..." rows="2" class="w-full p-2.5 border rounded-lg"></textarea>
+
+            <input type="text" id="address" required placeholder="المحافظة - المنطقة - الشارع" class="w-full p-2.5 border rounded-lg">
+            
+            <input type="hidden" id="location_url" value="لا يوجد موقع">
+            <button type="button" id="location-btn" onclick="getCurrentLocation()" class="w-full p-2 border border-blue-200 bg-blue-50 text-blue-700 rounded-lg text-xs">📍 إرفاق موقع المنزل الحالي</button>
+
+            <button type="submit" class="w-full bg-emerald-600 text-white p-3 rounded-xl font-bold">إرسال التقرير</button>
+        </form>
     </main>
-
 </body>
 </html>
