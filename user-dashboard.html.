@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة تحكم المستخدم | بلسم</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-slate-50 p-6">
     <header class="flex justify-between items-center mb-8 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
@@ -14,35 +15,55 @@
 
     <div class="grid grid-cols-1 gap-6">
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-            <h2 class="text-lg font-bold mb-4">خدمات الرعاية</h2>
-            <p class="text-slate-600 mb-4">هل تحتاج مساعدة جديدة؟</p>
-            <a href="services.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-bold">طلب خدمة جديدة</a>
+            <h2 class="text-lg font-bold mb-4 text-blue-600">هل تحتاج مساعدة طبية؟</h2>
+            <p class="text-slate-600 mb-4 font-medium">فريقنا التمريضي جاهز لخدمتكم على مدار الساعة.</p>
+            <a href="services.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition">طلب خدمة فورية</a>
         </div>
 
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-            <h2 class="text-lg font-bold mb-4">طلباتي الحالية</h2>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 overflow-x-auto">
+            <h2 class="text-lg font-bold mb-4">سجل الطلبات والتقييم</h2>
             <table class="w-full text-right">
                 <thead>
                     <tr class="text-slate-400 border-b">
-                        <th class="pb-3">الخدمة</th>
-                        <th class="pb-3">التاريخ</th>
-                        <th class="pb-3">الحالة</th>
+                        <th class="pb-3 px-2">الخدمة</th>
+                        <th class="pb-3 px-2">التاريخ</th>
+                        <th class="pb-3 px-2">الحالة</th>
+                        <th class="pb-3 px-2">التقييم</th>
                     </tr>
                 </thead>
                 <tbody class="text-slate-700">
                     <tr class="border-b">
-                        <td class="py-4">ضماد الجروح</td>
-                        <td class="py-4">2026-06-28</td>
-                        <td class="py-4 font-bold text-blue-600">قيد المراجعة</td>
+                        <td class="py-4 px-2 font-medium">ضماد جروح منزلية</td>
+                        <td class="py-4 px-2">2026-06-28</td>
+                        <td class="py-4 px-2">
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold">قيد المراجعة</span>
+                        </td>
+                        <td class="py-4 px-2 text-slate-400 italic text-sm">بانتظار الإتمام...</td>
                     </tr>
-                    <tr>
-                        <td class="py-4">رعاية كبار السن</td>
-                        <td class="py-4">2026-06-20</td>
-                        <td class="py-4 font-bold text-green-600">مكتملة</td>
+                    <tr class="border-b bg-slate-50/50">
+                        <td class="py-4 px-2 font-medium">رعاية كبار السن (8 ساعات)</td>
+                        <td class="py-4 px-2">2026-06-20</td>
+                        <td class="py-4 px-2">
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-xs font-bold">مكتملة</span>
+                        </td>
+                        <td class="py-4 px-2">
+                            <div class="flex items-center space-x-1 space-x-reverse">
+                                <a href="#" class="text-yellow-500 hover:scale-110 transition"><i class="fa-solid fa-star"></i></a>
+                                <a href="#" class="text-yellow-500 hover:scale-110 transition"><i class="fa-solid fa-star"></i></a>
+                                <a href="#" class="text-yellow-500 hover:scale-110 transition"><i class="fa-solid fa-star"></i></a>
+                                <a href="#" class="text-yellow-500 hover:scale-110 transition"><i class="fa-solid fa-star"></i></a>
+                                <a href="#" class="text-slate-300 hover:text-yellow-500 transition"><i class="fa-solid fa-star"></i></a>
+                                <span class="text-xs mr-2 text-blue-600 font-bold underline">إضافة ملاحظة</span>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <footer class="mt-12 py-6 text-center border-t border-slate-200">
+        <p class="text-slate-500 text-sm font-bold">منصة بلسم: الجودة في الرعاية التمريضية</p>
+    </footer>
 </body>
 </html>
