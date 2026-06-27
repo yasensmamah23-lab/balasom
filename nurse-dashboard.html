@@ -3,36 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة تحكم الممرض</title>
+    <title>لوحة تحكم الممرض | بلسم</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-50 p-6">
-    <div class="max-w-4xl mx-auto">
-        <div class="flex justify-between items-center mb-8">
-            <h1 class="text-2xl font-bold text-slate-800">مرحباً بك، ممرضنا العزيز</h1>
-            <!-- نظام حالة الممرض -->
-            <select class="p-2 border rounded-xl font-bold text-blue-600">
-                <option>🟢 متاح للعمل</option>
-                <option>🟠 مشغول حالياً</option>
-                <option>🔴 خارج الخدمة</option>
-            </select>
-        </div>
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl font-bold text-slate-800 mb-6">مرحباً، كادرنا المميز</h1>
         
-        <div class="grid gap-6">
-            <div class="            <div class="bg-white p-6 rounded-2xl shadow-sm border-r-4 border-blue-600">
-                <h2 class="font-bold text-lg mb-2">طلب زيارة منزلية جديد</h2>
-                <p class="text-slate-800 font-bold mb-1">المريض: أحمد محمد</p>
-                <<p class="text-slate-600 mb-4 text-sm">📍 نطاق العمل: عمان، الزرقاء، وجميع محافظات المملكة | 🩺 الحالة: مريض سكري، يحتاج غيار جرح</p>
-<p class="text-slate-500 mb-2 text-xs italic">نصلكم أينما تكونوا، نقيم المريض ويتم الاتفاق في مكانكم؛  .</p>
-
-                <div class="flex gap-2">
-                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg font-bold">قبول الطلب</button>
-                    <button class="bg-red-100 text-red-600 px-4 py-2 rounded-lg font-bold">رفض</button>
+        <!-- البطاقة الرئيسية -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6">
+            <h2 class="font-bold text-lg mb-4">الزيارات المطلوبة حالياً</h2>
+            <div class="space-y-3">
+                <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    <p class="font-bold text-blue-800">مريض سكري - الزرقاء الجديدة</p>
+                    <p class="text-sm text-slate-600">التوقيت: الساعة 4:00 مساءً</p>
                 </div>
-            </div>
-
             </div>
         </div>
     </div>
+
+    <footer class="mt-12 py-6 text-center border-t border-slate-200">
+        <p class="text-slate-500 text-sm font-bold">منصة بلسم للرعاية الصحية المنزلية © 2026</p>
+        <p class="text-slate-400 text-xs mt-1">جميع الحقوق محفوظة - نصلكم أينما كنتم</p>
+    </footer>
 </body>
 </html>
