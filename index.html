@@ -5,29 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بلسم الشفاء للتمريض المنزلي</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        // وظيفة جلب الموقع الجغرافي
+        function getCurrentLocation() {
+            const statusBtn = document.getElementById('location-btn');
+            if (navigator.geolocation) {
+                statusBtn.innerText = "⏳ جاري تحديد الموقع...";
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        const geoUrl = `https://www.google.com/maps?q=${lat},${lng}`;
+                        document.getElementById('location_url').value = geoUrl;
+                        statusBtn.innerText = "✅ تم تحديد الموقع بنجاح";
+                        statusBtn.classList.remove('bg-blue-50', 'text-blue-700', 'border-blue-200');
+                        statusBtn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200');
+                    },
+                    (error) => {
+                        statusBtn.innerText = "❌ فشل التحديد تلقائياً، يرجى كتابة العنوان";
+                    }
+                );
+            } else {
+                statusBtn.innerText = "❌ المتصفح لا يدعم تحديد الموقع";
+            }
+        }
+
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            // جلب البيانات من النموذج
+            const patientName = document.getElementById('patient_name').value;
+            const service = document.getElementById('service').value;
+            const condition = document.getElementById('condition').value;
+            const symptoms = document.getElementById('symptoms').value;
+            const address = document.getElementById('address').value;
+            const locationUrl = document.getElementById('location_url').value;
+            
+            // رقم الواتساب الرسمي الخاص بكم جاهز ومعدل
+            const phone = "962789188998"; 
+
+            // صياغة تقرير سريري منظم فائق الدقة
+            let message = `🚨 *طلب رعاية تمريضية جديدة - منصة بلسم الشفاء* 🚨\n\n` +
+                          `👤 *اسم المريض:* ${patientName}\n` +
+                          `🩺 *الخدمة المطلوبة:* ${service}\n` +
+                          `📊 *تقييم الوضع الحالي:* ${condition}\n` +
+                          `📝 *الأعراض والملاحظات:* ${symptoms || 'لا يوجد'}\n` +
+                          `📍 *العنوان السكني:* ${address}\n`;
+
+            if (locationUrl) {
+                message += `🗺️ *رابط الموقع الجغرافي:* ${locationUrl}\n`;
+            }
+
+            message += `\n📥 _تم الفرز والتقييم تلقائياً عبر النظام الذكي للمنصة._`;
+
+            // ترميز النص وفتح الواتساب
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
     <!-- القائمة العلوية -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold text-emerald-600">بلسم الشفاء</div>
-            <span class="text-sm bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">رعاية منزلية متكاملة</span>
+    <header class="bg-white shadow-xs sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-black text-emerald-600 tracking-tight">بلسم الشفاء</div>
+            <span class="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-bold border border-emerald-100">نظام الفرز السريري التفاعلي</span>
         </div>
     </header>
 
-    <!-- القسم الرئيسي -->
-    <main class="max-w-4xl mx-auto px-4 py-12 text-center">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-            </div>
-            <h1 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">منصة بلسم الشفاء للتمريض المنزلي</h1>
-            <p class="text-gray-600 mb-8 max-w-lg mx-auto leading-relaxed">"رعاية طبية متكاملة بلمسة حنان مألوفة في دفء بيتك." الموقع قيد الإطلاق الفني النهائي حالياً لربط نظام الفرز التفاعلي الذكي بالواتساب الرسمي الخاص بكم في الزرقاء.</p>
+    <!-- القسم الرئيسي ونموذج الفرز -->
+    <main class="max-w-xl mx-auto px-4 py-10">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xs border border-slate-100">
+            <h1 class="text-xl font-black text-slate-900 mb-2 text-center">تقييم الحالة وطلب الرعاية المنزلية</h1>
+            <p class="text-xs text-slate-500 mb-6 text-center leading-relaxed">يرجى إدخال البيانات الطبية الأساسية لمساعدة الطاقم التمريضي المشرف على اتخاذ القرار السريع وتجهيز المعدات اللازمة قبل الزيارة.</p>
             
-            <div class="border-t border-gray-100 pt-6">
-                <p class="text-sm text-gray-500 font-medium">مشرف المنصة: يـاسـيـن مـحـمـد</p>
+            <form onsubmit="sendToWhatsApp(event)" class="space-y-5">
+                <!-- اسم المريض -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">اسم المريض الكامل (أو صلة القرابة):</label>
+                    <input type="text" id="patient_name" required placeholder="مثال: أحمد علي / والدتي" 
+                           class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
+                </div>
+
+                <!-- نوع الخدمة المطلوبة -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">نوع الخدمة التمريضية المطلوبة:</label>
+                    <select id="service" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
+                        <option value="العناية بالجروح وقرح الفراش">العناية بالجروح المزمنة وقرح الفراش</option>
+                        <option value="تركيب أو تغيير قسطرة بولية">تركيب أو تغيير القسطرة البولية (Urinary Catheter)</option>
+                        <option value="إعطاء أدوية ومحاليل وريدية">إعطاء العلاجات والمحاليل الوريدية (IV Infusion)</option>
+                        <option value="سحب عينات دم وفحوصات مخبرية">سحب عينات الدم والفحوصات المخبرية المنزلية</option>
+                        <option value="متابعة علامات حيوية ورعاية دورية">رعاية دورية ومراقبة العلامات الحيوية لكبار السن</option>
+                    </select>
+                </div>
+
+                <!-- تصنيف الحالة -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">الوضع الصحي العام الحالي:</label>
+                    <select id="condition" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
+                        <option value="🟢 حالة مستقرة تماماً (غيار دوري أو زيارة مجدولة)">🟢 حالة مستقرة تماماً (غيار دوري أو زيارة مجدولة)</option>
+                        <option value="🟡 حالة شبه مستقرة (متابعة دقيقة بعد الخروج من المستشفى)">🟡 حالة شبه مستقرة (متابعة دقيقة بعد الخروج من المستشفى)</option>
+                        <option value="🟠 حالة غير مستقرة (تستدعي طاقم تمريضي بشكل عاجل)">🟠 حالة غير مستقرة (تستدعي طاقم تمريضي بشكل عاجل)</option>
+                    </select>
+                </div>
+
+                <!-- نظام فرز الأعراض المتقدم -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">أعراض خاصة أو ملاحظات طبية (إن وجدت):</label>
+                    <textarea id="symptoms" rows="2" placeholder="مثال: مريض سكري، وجود احمرار حول الجرح، صعوبة حركة..." 
+                              class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50 resize-none"></textarea>
+                </div>
+
+                <!-- العنوان والموقع الجغرافي الذكي -->
+                <div class="pt-2 border-t border-slate-100">
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">العنوان السكني بالتفصيل (في الزرقاء):</label>
+                    <input type="text" id="address" required placeholder="المنطقة، الشارع، معلم بارز بالقرب من المنزل" 
+                           class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50 mb-2">
+                    
+                    <!-- زر الموقع الجغرافي الإبداعي -->
+                    <input type="hidden" id="location_url" value="">
+                    <button type="button" id="location-btn" onclick="getCurrentLocation()" 
+                            class="w-full py-2 px-3 border border-blue-200 bg-blue-50/50 hover:bg-blue-50 text-blue-700 text-xs font-bold rounded-lg transition duration-150 flex items-center justify-center gap-2 cursor-pointer">
+                        📍 اضغط هنا لإرفاق موقع المنزل الحالي عبر الخريطة تلقائياً
+                    </button>
+                </div>
+
+                <!-- زر الإرسال التفاعلي -->
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl transition duration-200 text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-100 cursor-pointer mt-4">
+                    <span>إرسال تقرير الفرز الفوري عبر واتساب</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- مؤشرات الموثوقية الطبية والمهنية في الأسفل -->
+        <div class="mt-8 grid grid-cols-1 gap-3 text-center">
+            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
+                <p class="text-xs font-bold text-slate-900 mb-0.5">🛡️ طواقم مرخصة ومؤهلة</p>
+                <p class="text-[11px] text-slate-500">كافة خدماتنا تقدم عبر ممرضين قانونيين مرخصين ومؤهلين علمياً وعملياً.</p>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
+                <p class="text-xs font-bold text-slate-900 mb-0.5">🩺 إدارة طبية وتمريضية دقيقة</p>
+                <p class="text-[11px] text-slate-500">إشراف ومتابعة مستمرة للخطط العلاجية لضمان أعلى معايير السلامة ومكافحة العدوى.</p>
             </div>
         </div>
     </main>
+
 </body>
 </html>
