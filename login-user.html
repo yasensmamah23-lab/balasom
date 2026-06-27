@@ -6,22 +6,17 @@
     <title>دخول المستخدم | بلسم</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-slate-50 p-6">
-    <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-        <h1 class="text-2xl font-bold text-slate-800 mb-6 text-center">دخول المستخدم</h1>
+<body class="bg-slate-50 p-6 flex justify-center items-center min-h-screen">
+    <div class="w-full max-w-sm bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
+        <h1 class="text-2xl font-bold text-slate-800 mb-6">دخول المستخدم</h1>
         <form class="space-y-4">
-            <input type="text" placeholder="رقم الهاتف" class="w-full p-4 border rounded-xl">
-            <input type="password" placeholder="كلمة المرور" class="w-full p-4 border rounded-xl">
-            <button class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold">تسجيل الدخول</button>
+            <input type="email" placeholder="البريد الإلكتروني" class="w-full p-3 border rounded-xl">
+            <input type="password" placeholder="كلمة المرور" class="w-full p-3 border rounded-xl">
+            <a href="user-dashboard.html" class="block w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">تسجيل الدخول</a>
         </form>
-        <div class="mt-4 text-center">
-            <a href="signup-user.html" class="text-blue-600 hover:underline text-sm">ليس لديك حساب؟ سجل الآن</a>
-        </div>
+        <p class="mt-4 text-sm text-slate-600">
+            ليس لديك حساب؟ <a href="signup-user.html" class="text-blue-600 font-bold underline">سجل الآن</a>
+        </p>
     </div>
-
-    <footer class="mt-12 py-6 text-center border-t border-slate-200">
-        <p class="text-slate-500 text-sm font-bold">منصة بلسم للرعاية الصحية المنزلية © 2026</p>
-        <p class="text-slate-400 text-xs mt-1">جميع الحقوق محفوظة - نصلكم أينما كنتم</p>
-    </footer>
 </body>
 </html>
