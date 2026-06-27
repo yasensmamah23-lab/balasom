@@ -6,7 +6,6 @@
     <title>بلسم الشفاء للتمريض المنزلي</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script>
-        // وظيفة جلب الموقع الجغرافي
         function getCurrentLocation() {
             const statusBtn = document.getElementById('location-btn');
             if (navigator.geolocation) {
@@ -33,7 +32,6 @@
         function sendToWhatsApp(event) {
             event.preventDefault();
             
-            // جلب البيانات من النموذج
             const patientName = document.getElementById('patient_name').value;
             const service = document.getElementById('service').value;
             const condition = document.getElementById('condition').value;
@@ -41,10 +39,8 @@
             const address = document.getElementById('address').value;
             const locationUrl = document.getElementById('location_url').value;
             
-            // رقم الواتساب الرسمي الخاص بكم جاهز ومعدل
             const phone = "962789188998"; 
 
-            // صياغة تقرير سريري منظم فائق الدقة
             let message = `🚨 *طلب رعاية تمريضية جديدة - منصة بلسم الشفاء* 🚨\n\n` +
                           `👤 *اسم المريض:* ${patientName}\n` +
                           `🩺 *الخدمة المطلوبة:* ${service}\n` +
@@ -58,7 +54,6 @@
 
             message += `\n📥 _تم الفرز والتقييم تلقائياً عبر النظام الذكي للمنصة._`;
 
-            // ترميز النص وفتح الواتساب
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
         }
@@ -66,7 +61,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- القائمة العلوية -->
     <header class="bg-white shadow-xs sticky top-0 z-50 border-b border-slate-100">
         <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-xl font-black text-emerald-600 tracking-tight">بلسم الشفاء</div>
@@ -74,21 +68,18 @@
         </div>
     </header>
 
-    <!-- القسم الرئيسي ونموذج الفرز -->
     <main class="max-w-xl mx-auto px-4 py-10">
         <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xs border border-slate-100">
-            <h1 class="text-xl font-black text-slate-900 mb-2 text-center">تقييم الحالة وطلب الرعاية المنزلية</h1>
+            <h1 class="text-xl font-black text-slate-900 mb-2 text-center">%D8%AA%D9%82%D9%8A%D9%8A%D9%85 الحالة وطلب الرعاية المنزلية</h1>
             <p class="text-xs text-slate-500 mb-6 text-center leading-relaxed">يرجى إدخال البيانات الطبية الأساسية لمساعدة الطاقم التمريضي المشرف على اتخاذ القرار السريع وتجهيز المعدات اللازمة قبل الزيارة.</p>
             
             <form onsubmit="sendToWhatsApp(event)" class="space-y-5">
-                <!-- اسم المريض -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1.5">اسم المريض الكامل (أو صلة القرابة):</label>
                     <input type="text" id="patient_name" required placeholder="مثال: أحمد علي / والدتي" 
                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
                 </div>
 
-                <!-- نوع الخدمة المطلوبة -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1.5">نوع الخدمة التمريضية المطلوبة:</label>
                     <select id="service" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
@@ -100,7 +91,6 @@
                     </select>
                 </div>
 
-                <!-- تصنيف الحالة -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1.5">الوضع الصحي العام الحالي:</label>
                     <select id="condition" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50">
@@ -110,20 +100,17 @@
                     </select>
                 </div>
 
-                <!-- نظام فرز الأعراض المتقدم -->
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1.5">أعراض خاصة أو ملاحظات طبية (إن وجدت):</label>
                     <textarea id="symptoms" rows="2" placeholder="مثال: مريض سكري، وجود احمرار حول الجرح، صعوبة حركة..." 
                               class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50 resize-none"></textarea>
                 </div>
 
-                <!-- العنوان والموقع الجغرافي الذكي -->
                 <div class="pt-2 border-t border-slate-100">
                     <label class="block text-xs font-bold text-slate-700 mb-1.5">العنوان السكني بالتفصيل (في الزرقاء):</label>
                     <input type="text" id="address" required placeholder="المنطقة، الشارع، معلم بارز بالقرب من المنزل" 
                            class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-500 text-sm bg-slate-50/50 mb-2">
                     
-                    <!-- زر الموقع الجغرافي الإبداعي -->
                     <input type="hidden" id="location_url" value="">
                     <button type="button" id="location-btn" onclick="getCurrentLocation()" 
                             class="w-full py-2 px-3 border border-blue-200 bg-blue-50/50 hover:bg-blue-50 text-blue-700 text-xs font-bold rounded-lg transition duration-150 flex items-center justify-center gap-2 cursor-pointer">
@@ -131,14 +118,12 @@
                     </button>
                 </div>
 
-                <!-- زر الإرسال التفاعلي -->
                 <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl transition duration-200 text-sm flex items-center justify-center gap-2 shadow-md shadow-emerald-100 cursor-pointer mt-4">
                     <span>إرسال تقرير الفرز الفوري عبر واتساب</span>
                 </button>
             </form>
         </div>
 
-        <!-- مؤشرات الموثوقية الطبية والمهنية في الأسفل -->
         <div class="mt-8 grid grid-cols-1 gap-3 text-center">
             <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
                 <p class="text-xs font-bold text-slate-900 mb-0.5">🛡️ طواقم مرخصة ومؤهلة</p>
