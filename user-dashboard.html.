@@ -8,15 +8,40 @@
 </head>
 <body class="bg-slate-50 p-6">
     <header class="flex justify-between items-center mb-8 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-        <h1 class="text-xl font-bold text-slate-800">لوحة تحكم المستخدم</h1>
+        <h1 class="text-xl font-bold text-slate-800">مرحباً يا ياسين</h1>
         <a href="index.html" class="bg-red-50 text-red-600 px-4 py-2 rounded-lg font-bold hover:bg-red-100">تسجيل الخروج</a>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 gap-6">
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
             <h2 class="text-lg font-bold mb-4">خدمات الرعاية</h2>
-            <p class="text-slate-600 mb-6">يمكنك تصفح خدماتنا المتاحة وطلب الخدمة التي تحتاجها.</p>
-            <a href="services.html" class="block w-full bg-blue-600 text-white text-center py-3 rounded-xl font-bold">تصفح الخدمات</a>
+            <p class="text-slate-600 mb-4">هل تحتاج مساعدة جديدة؟</p>
+            <a href="services.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-bold">طلب خدمة جديدة</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h2 class="text-lg font-bold mb-4">طلباتي الحالية</h2>
+            <table class="w-full text-right">
+                <thead>
+                    <tr class="text-slate-400 border-b">
+                        <th class="pb-3">الخدمة</th>
+                        <th class="pb-3">التاريخ</th>
+                        <th class="pb-3">الحالة</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b">
+                        <td class="py-4">ضماد الجروح</td>
+                        <td class="py-4">2026-06-28</td>
+                        <td class="py-4 font-bold text-blue-600">قيد المراجعة</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4">رعاية كبار السن</td>
+                        <td class="py-4">2026-06-20</td>
+                        <td class="py-4 font-bold text-green-600">مكتملة</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
