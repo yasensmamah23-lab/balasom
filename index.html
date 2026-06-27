@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بلسم - الصفحة الرئيسية</title>
+    <title>بلسم | للرعاية الصحية المنزلية</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-50 p-6">
-    <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm text-center">
-        <h1 class="text-3xl font-bold mb-8 text-blue-600">أهلاً بك في بلسم</h1>
+    <div class="max-w-md mx-auto text-center">
+        <!-- الشعار أو العنوان الرئيسي -->
+        <h1 class="text-4xl font-bold text-blue-800 mb-2">بلسم</h1>
+        <p class="text-slate-600 mb-8">نصلكم أينما تكونوا في كافة محافظات المملكة.</p>
+        
         <div class="space-y-4">
-            <a href="login-nurse.html" class="block w-full bg-blue-600 text-white p-4 rounded-xl font-bold">تسجيل ممرض جديد</a>
-            <a href="login-user.html" class="block w-full bg-slate-100 text-slate-700 p-4 rounded-xl font-bold">تسجيل مستخدم جديد</a>
+            <!-- أزرار الوصول -->
+            <a href="services.html" class="block bg-white border-2 border-blue-600 text-blue-600 py-4 rounded-xl font-bold hover:bg-blue-50 transition">
+                استعرض خدماتنا الطبية
+            </a>
+            
+            <div class="pt-8">
+                <p class="text-slate-500 mb-4">هل أنت مستخدم أم ممرض؟</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="login-user.html" class="bg-blue-600 text-white py-3 rounded-xl font-bold">دخول المستخدم</a>
+                    <a href="login-nurse.html" class="bg-slate-800 text-white py-3 rounded-xl font-bold">دخول الممرض</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
