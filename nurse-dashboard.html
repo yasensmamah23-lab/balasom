@@ -7,24 +7,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-50 p-6">
-    <div class="max-w-2xl mx-auto">
-        <h1 class="text-2xl font-bold text-slate-800 mb-6">مرحباً، كادرنا المميز</h1>
-        
-        <!-- البطاقة الرئيسية -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-6">
-            <h2 class="font-bold text-lg mb-4">الزيارات المطلوبة حالياً</h2>
-            <div class="space-y-3">
-                <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
-                    <p class="font-bold text-blue-800">مريض سكري - الزرقاء الجديدة</p>
-                    <p class="text-sm text-slate-600">التوقيت: الساعة 4:00 مساءً</p>
-                </div>
-            </div>
+    <header class="flex justify-between items-center mb-8 bg-slate-800 p-4 rounded-xl shadow-sm">
+        <h1 class="text-xl font-bold text-white">لوحة تحكم الممرض</h1>
+        <a href="index.html" class="bg-red-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-red-600">تسجيل الخروج</a>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+            <h2 class="text-lg font-bold mb-4">الطلبات الواردة</h2>
+            <p class="text-slate-600">هنا ستظهر قائمة بطلبات المرضى المتاحة.</p>
         </div>
     </div>
-
-    <footer class="mt-12 py-6 text-center border-t border-slate-200">
-        <p class="text-slate-500 text-sm font-bold">منصة بلسم للرعاية الصحية المنزلية © 2026</p>
-        <p class="text-slate-400 text-xs mt-1">جميع الحقوق محفوظة - نصلكم أينما كنتم</p>
-    </footer>
 </body>
 </html>
