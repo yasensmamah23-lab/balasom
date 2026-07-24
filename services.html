@@ -56,20 +56,67 @@
             </div>
         </div>
 
-        <!-- قسم الأسئلة الشائعة (FAQ) المضاف والمضبوط -->
-        <section class="bg-white p-8 rounded-3xl shadow-md space-y-6">
-            <h2 class="text-2xl font-bold text-blue-900 text-center">الأسئلة الشائعة</h2>
-            <div class="space-y-4">
-                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-slate-900 mb-1">هل الكادر مرخص رسمياً؟</h4>
-                    <p class="text-slate-600 text-sm">نعم، جميع الممرضين والممرضات حاصلون على تراخيص مزاولة المهنة الرسمية من وزارة الصحة الأردنية.</p>
+        <!-- قسم لماذا تختارنا (اللي كان غائب) -->
+        <section class="bg-white p-8 rounded-3xl shadow-md space-y-4">
+            <h2 class="text-2xl font-bold text-blue-900 text-center">لماذا تختار بلسم الشفاء؟</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                <div class="bg-slate-50 p-4 rounded-2xl text-center border border-slate-100">
+                    <h4 class="font-bold text-blue-900 mb-1">كادر مرخص</h4>
+                    <p class="text-slate-600 text-xs">معتمدون رسمياً من وزارة الصحة.</p>
                 </div>
-                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-slate-900 mb-1">ما هي المناطق التي تغطيها الخدمة؟</h4>
-                    <p class="text-slate-600 text-sm">نغطي العاصمة عمّان وجميع المحافظات الأردنية على مدار 24 ساعة.</p>
+                <div class="bg-slate-50 p-4 rounded-2xl text-center border border-slate-100">
+                    <h4 class="font-bold text-blue-900 mb-1">إشراف دوري</h4>
+                    <p class="text-slate-600 text-xs">متابعة مستمرة لصحة المريض.</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl text-center border border-slate-100">
+                    <h4 class="font-bold text-blue-900 mb-1">خدمة 24/7</h4>
+                    <p class="text-slate-600 text-xs">متواجدون على مدار الساعة.</p>
                 </div>
             </div>
         </section>
+
+        <!-- قسم الأسئلة الشائعة التفاعلي (Accordion) -->
+        <section class="bg-white p-8 rounded-3xl shadow-md space-y-6">
+            <h2 class="text-2xl font-bold text-blue-900 text-center">الأسئلة الشائعة</h2>
+            <div class="space-y-3">
+                <!-- السؤال الأول -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-4 text-right bg-slate-50 hover:bg-slate-100 font-bold text-slate-900 flex justify-between items-center transition-all">
+                        <span>هل الكادر مرخص رسمياً؟</span>
+                        <span id="icon-1" class="transform transition-transform duration-200 text-blue-600 font-bold">▼</span>
+                    </button>
+                    <div id="faq-1" class="hidden p-4 text-slate-600 text-sm border-t border-slate-200 bg-white">
+                        نعم، جميع الممرضين والممرضات حاصلون على تراخيص مزاولة المهنة الرسمية من وزارة الصحة الأردنية لضمان أعلى معايير الأمان.
+                    </div>
+                </div>
+
+                <!-- السؤال الثاني -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-4 text-right bg-slate-50 hover:bg-slate-100 font-bold text-slate-900 flex justify-between items-center transition-all">
+                        <span>ما هي المناطق التي تغطيها الخدمة؟</span>
+                        <span id="icon-2" class="transform transition-transform duration-200 text-blue-600 font-bold">▼</span>
+                    </button>
+                    <div id="faq-2" class="hidden p-4 text-slate-600 text-sm border-t border-slate-200 bg-white">
+                        نغطي العاصمة عمّان وجميع المحافظات الأردنية على مدار 24 ساعة طوال أيام الأسبوع.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- سكريبت التفاعل الخاص بالسهم -->
+        <script>
+            function toggleFaq(id) {
+                const content = document.getElementById(`faq-${id}`);
+                const icon = document.getElementById(`icon-${id}`);
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        </script>
 
         <!-- زر الطوارئ العائم -->
         <div class="fixed bottom-4 left-4 z-50">
