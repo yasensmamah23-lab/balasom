@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
             margin: 0;
-            padding: 20px 20px 80px 20px;
+            padding: 20px 20px 90px 20px;
             color: #333;
             text-align: right;
         }
@@ -82,10 +82,20 @@
             font-size: 1.2rem;
         }
         .service-card p {
-            margin: 10px 0 0 0;
+            margin: 10px 0;
             color: #666;
             font-size: 0.95rem;
             line-height: 1.5;
+        }
+        .btn-action {
+            display: inline-block;
+            margin-top: 8px;
+            color: #ffffff;
+            background-color: #38a169;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
         }
 
         /* كارد المميزات */
@@ -108,21 +118,30 @@
             font-size: 0.9rem;
         }
 
-        /* زر الواتساب الثابت تحت */
+        /* زر الواتساب العائم الحقيقي والثابت بالزاوية */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #38a169;
+            left: 20px;
+            background-color: #25d366;
             color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            font-size: 1rem;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             z-index: 1000;
+            transition: transform 0.2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
         }
     </style>
 </head>
@@ -145,21 +164,25 @@
     <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة رعاية مرضى الجلطات" class="service-card" target="_blank">
         <h3>رعاية مرضى الجلطات</h3>
         <p>متابعة دورية للعلامات الحيوية، إدارة الأدوية في مواعيدها، ومساعدة المريض على استعادة قدراته الحركة بأمان تام تحت إشراف تمريضي متخصص.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
     <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة العناية بالحالات الخاصة وكبار السن" class="service-card" target="_blank">
         <h3>العناية بالحالات الخاصة وكبار السن</h3>
         <p>مرافقة دائمة وعناية شخصية متكاملة لضمان راحة وسلامة المسن وتوفير بيئة صحية ونفسية مستقرة له داخل البيت.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
     <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة العناية بالمواليد والأمهات" class="service-card" target="_blank">
         <h3>العناية بالمواليد والأمهات</h3>
         <p>دعم الأم الجديدة، العناية بالصحة العامة للمولود، وتقديم الإرشادات الطبية الصحيحة لضمان فترة نفاس آمنة ومريحة.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
     <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمات الرعاية التمريضية العامة" class="service-card" target="_blank">
         <h3>الرعاية التمريضية العامة</h3>
         <p>تركيب المحاليل، الغيارات الجراحية، إعطاء الحقن، ومتابعة الحالات المرضية المزمنة بكل دقة واحترافية.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
     <h2 class="section-title">لماذا تختار بلسم الشفاء؟</h2>
@@ -181,8 +204,10 @@
 
 </div>
 
-<a href="https://wa.me/962789188998?text=مرحباً، أرغب بالتواصل العاجل" class="whatsapp-float" target="_blank">
-    تواصل عاجل (واتساب)
+<a href="https://wa.me/962789188998?text=مرحباً، أرغب بالتواصل العاجل مع مركز بلسم الشفاء" class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب">
+    <svg viewBox="0 0 24 24">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.1c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.25-2.83-1.25-4.38 0-4.57 3.72-8.29 8.29-8.29 2.21 0 4.29.86 5.85 2.42 1.56 1.56 2.42 3.64 2.42 5.85 0 4.57-3.72 8.29-8.29 8.29zm4.55-6.25c-.25-.13-1.48-.73-1.71-.82-.23-.09-.39-.13-.56.13-.17.25-.65.82-.8 1-.15.17-.3.19-.55.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.68.31-.23.25-.89.87-.89 2.12 0 1.25.91 2.45 1.04 2.62.13.17 1.8 2.75 4.36 3.86.61.26 1.08.42 1.45.54.61.19 1.16.16 1.6.1.49-.07 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29z"/>
+    </svg>
 </a>
 
 </body>
