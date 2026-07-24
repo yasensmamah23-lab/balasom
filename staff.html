@@ -63,11 +63,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">شهادة مزاولة المهنة</label>
-                        <input type="text" id="licenseNote" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
+                        <input type="file" id="licenseFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
                     </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">شهادة عدم المحكومية</label>
-                        <input type="text" id="policeNote" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
+                        <input type="file" id="policeFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
                     </div>
                 </div>
 
@@ -128,7 +128,7 @@
                                 `الخبرة: ${experience}%0a` +
                                 `السكن: ${address}%0a` +
                                 `------------------%0a` +
-                                `يرجى طلب شهادة المزاولة وعدم المحكومية مباشرة من الممرض.`;
+                                `تم اختيار الملفات ومرفقة للطلب.`;
 
                 window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
             }
