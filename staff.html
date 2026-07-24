@@ -99,15 +99,12 @@
                     <input type="text" id="address" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
 
-                <!-- حقول رفع الملفات والصورة الشخصية -->
+                <!-- حقول رفع الملفات والسي في -->
                 <div class="space-y-4">
-                    <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">رفع صورة شخصية (بخلفية بيضاء)</label>
-                        <input type="file" id="personalPhoto" accept="image/*" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
-                    </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">رفع السيرة الذاتية (CV)</label>
                         <input type="file" id="cvFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                        <p class="text-xs text-amber-700 mt-1 font-medium">⚠️ شرط أساسي: يجب أن تحتوي السيرة الذاتية على صورة شخصية حديثة ذات خلفية بيضاء.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -132,8 +129,13 @@
                     </div>
                 </div>
                 
+                <!-- تنبيه عدم اكتمال الطلب -->
+                <div class="p-3 bg-rose-50 rounded-xl border border-rose-200 text-center">
+                    <p class="text-xs text-rose-800 font-bold">⛔ تنبيه هام: لن يتم النظر في أي طلب غير مكتمل الشروط والوثائق المطلوبة.</p>
+                </div>
+
                 <!-- الموافقة والشروط -->
-                <div class="flex items-center gap-2 pt-2">
+                <div class="flex items-center gap-2 pt-1">
                     <input type="checkbox" id="staffTerms" required class="w-4 h-4 text-blue-600 rounded border-slate-300">
                     <label for="staffTerms" class="text-xs text-slate-600">
                         أقر بأن جميع البيانات المدخلة صحيحة وأوافق على شروط وأحكام العمل في مركز بلسم الشفاء.
@@ -217,7 +219,7 @@
                                 `التوفر: ${availability}%0a` +
                                 `السكن: ${address}%0a` +
                                 `------------------%0a` +
-                                `تم إرفاق الصورة الشخصية، السي في والشهادات للطلب.`;
+                                `تم إرفاق السي في والشهادات المطلوبين للطلب.`;
 
                 window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
             }
