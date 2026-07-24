@@ -14,6 +14,14 @@
         <div class="bg-white p-6 rounded-3xl shadow-sm text-center space-y-2 border-t-8 border-blue-900">
             <h1 class="text-2xl font-black text-blue-900">بلسم الشفاء للتمريض المنزلي</h1>
             <p class="text-slate-600 text-sm font-medium">بوابة انضمام الكادر التمريضي والكوادر الصحية المعتمدة</p>
+            
+            <!-- زر مشاركة الصفحة -->
+            <div class="pt-3">
+                <button onclick="sharePage()" class="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 px-4 py-2 rounded-xl text-xs font-bold transition-all border border-emerald-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+                    مشاركة رابط بوابة التوظيف
+                </button>
+            </div>
         </div>
 
         <!-- نموذج تسجيل الكادر -->
@@ -55,7 +63,6 @@
                     </div>
                 </div>
 
-                <!-- الإضافات الجديدة: التخصص، المناوبات، والتوفر -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">التخصص الدقيق</label>
@@ -92,8 +99,12 @@
                     <input type="text" id="address" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
 
-                <!-- حقول رفع الملفات والسي في -->
+                <!-- حقول رفع الملفات والصورة الشخصية -->
                 <div class="space-y-4">
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">رفع صورة شخصية (بخلفية بيضاء)</label>
+                        <input type="file" id="personalPhoto" accept="image/*" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                    </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">رفع السيرة الذاتية (CV)</label>
                         <input type="file" id="cvFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
@@ -135,8 +146,42 @@
             </form>
         </div>
 
-        <!-- سكريبت تحويل الطلب للواتساب -->
+        <!-- قسم تقييمات المرضى والكادر -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm space-y-4 border border-slate-100">
+            <h3 class="text-lg font-bold text-blue-900 text-center">آراء وثقة عملائنا</h3>
+            <div class="space-y-3">
+                <div class="p-4 bg-slate-50 rounded-2xl text-xs space-y-1">
+                    <div class="flex items-center justify-between font-bold text-slate-800">
+                        <span>أبو أحمد (عمان)</span>
+                        <span class="text-amber-500">★★★★★</span>
+                    </div>
+                    <p class="text-slate-600">"خدمة ممتازة واحترافية عالية برعاية مريض الجلطات، شكراً لمركز بلسم الشفاء على الأمانة وحسن التدبير."</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-2xl text-xs space-y-1">
+                    <div class="flex items-center justify-between font-bold text-slate-800">
+                        <span>أم صهيب (إربد)</span>
+                        <span class="text-amber-500">★★★★★</span>
+                    </div>
+                    <p class="text-slate-600">"الممرضين عندهم مهنية عالية جداً والتزام بالمواعيد، أفضل مركز تعاملت معه للتمريض المنزلي."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- سكريبت الواتساب ومشاركة الصفحة -->
         <script>
+            function sharePage() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'بوابة انضمام الكادر الطبي | بلسم الشفاء',
+                        text: 'انضم الآن إلى كادر مركز بلسم الشفاء للتمريض المنزلي',
+                        url: window.location.href,
+                    }).catch(() => {});
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('تم نسخ رابط الصفحة بنجاح!');
+                }
+            }
+
             function sendToWhatsApp(e) {
                 e.preventDefault();
                 
@@ -172,7 +217,7 @@
                                 `التوفر: ${availability}%0a` +
                                 `السكن: ${address}%0a` +
                                 `------------------%0a` +
-                                `تم إرفاق السي في والشهادات للطلب.`;
+                                `تم إرفاق الصورة الشخصية، السي في والشهادات للطلب.`;
 
                 window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
             }
