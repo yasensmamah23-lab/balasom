@@ -7,30 +7,71 @@
     <title>اتصل بنا | بلسم الشفاء</title>
 </head>
 <body class="bg-slate-50 p-6">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-3xl font-bold text-center mb-8">اتصل بنا وآراء عملائنا</h1>
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- العنوان الرئيسي -->
+        <header class="text-center space-y-2">
+            <h1 class="text-3xl font-bold text-slate-900">اتصل بنا</h1>
+            <p class="text-slate-600">نحن بجانبكم على مدار الساعة لتقديم الرعاية الطبية والعناية الآمنة.</p>
+        </header>
 
-        <!-- قسم آراء المرضى -->
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-2 text-center">ماذا يقولون عنا؟</h2>
-            <div class="bg-white p-6 rounded-3xl shadow-md border-r-4 border-emerald-500 italic text-slate-700">
-                "احترافية عالية، دقة في المواعيد، ومعاملة إنسانية فوق الوصف. شكراً بلسم الشفاء على رعاية الوالد."
-                <p class="text-sm font-bold mt-2 text-emerald-600">- أبو محمد</p>
-            </div>
+        <!-- شارة الحالة / ساعات العمل -->
+        <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl flex items-center justify-center space-x-3 space-x-reverse shadow-sm">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <span class="text-emerald-800 font-semibold text-sm">الخدمة متاحة على مدار الساعة (24/7) - طوال أيام الأسبوع</span>
+        </div>
+
+        <!-- أزرار التواصل المباشر السريعة -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-5 rounded-2xl shadow-md flex items-center justify-center space-x-3 space-x-reverse transition-all">
+                <span class="font-bold text-lg">تواصل عبر الواتساب</span>
+            </a>
+            <a href="tel:+962789188998" class="bg-blue-600 hover:bg-blue-700 text-white p-5 rounded-2xl shadow-md flex items-center justify-center space-x-3 space-x-reverse transition-all">
+                <span class="font-bold text-lg">اتصال هاتفي مباشر</span>
+            </a>
+        </div>
+
+        <!-- معلومات التغطية والنطاق -->
+        <section class="bg-white p-8 rounded-3xl shadow-md border-r-8 border-blue-600 space-y-4">
+            <h2 class="text-xl font-bold text-blue-900">نطاق الخدمة والكادر الطبي</h2>
+            <p class="text-slate-700 leading-relaxed">
+                نغطي العاصمة <strong>عمّان، الزرقاء، وجميع المحافظات الأردنية</strong>. يوجد لدينا كادر من الممرضين والممرضات المتخصصين والمرخصين في جميع أنحاء المملكـة لضمان تقديم أعلى مستوى من الرعاية المنزلية.
+            </p>
         </section>
 
-        <!-- قسم التواصل الاحترافي المباشر -->
-        <section>
-            <h2 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-blue-200 pb-2 text-center">طرق التواصل المباشر</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <a href="https://wa.me/962789188998?text=مرحباً، أود حجز موعد لخدمة تمريضية، هل يمكنكم مساعدتي؟" class="bg-blue-600 text-white p-4 rounded-2xl text-center font-bold hover:bg-blue-700 transition">حجز موعد</a>
-                <a href="https://wa.me/962789188998?text=مرحباً، أود الحصول على استشارة طبية، هل يمكنكم مساعدتي؟" class="bg-blue-600 text-white p-4 rounded-2xl text-center font-bold hover:bg-blue-700 transition">استشارة طبية</a>
-                <a href="tel:+962789188998" class="bg-slate-800 text-white p-4 rounded-2xl text-center font-bold hover:bg-slate-900 transition">اتصال مباشر</a>
-            </div>
+        <!-- نموذج الحجز السريع -->
+        <section class="bg-white p-8 rounded-3xl shadow-md space-y-6">
+            <h3 class="text-2xl font-bold text-blue-900">نموذج الحجز السريع</h3>
+            <form action="#" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">الاسم الكامل</label>
+                    <input type="text" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="أدخل اسمك الكريم" required>
+                </div>
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">رقم الهاتف</label>
+                    <input type="tel" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="07xxxxxxxx" required>
+                </div>
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">نوع الخدمة المطلوبة</label>
+                    <select class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                        <option>رعاية تمريضية عامة</option>
+                        <option>رعاية مرضى الجلطات</option>
+                        <option>العناية بالمواليد والأمهات</option>
+                        <option>العناية بالحالات الخاصة وكبار السن</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold p-4 rounded-xl shadow-lg transition-all">
+                    إرسال الطلب
+                </button>
+                <p class="text-xs text-slate-500 text-center mt-2">سيتم التواصل معك فوراً من قبل الفريق الطبي المختص لتأكيد الطلب.</p>
+            </form>
         </section>
 
         <div class="text-center mt-10">
-            <a href="index.html" class="text-slate-500 underline">العودة للرئيسية</a>
+            <a href="index.html" class="text-blue-700 font-bold underline">العودة للرئيسية</a>
         </div>
     </div>
 </body>
