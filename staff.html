@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">الجنس</label>
                         <select id="gender" required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
@@ -46,8 +46,12 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">العمر (أو تاريخ الميلاد)</label>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">العمر</label>
                         <input type="text" id="age" required placeholder="مثال: 30 سنة" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">سنوات الخبرة</label>
+                        <input type="text" id="experience" required placeholder="مثال: 5 سنوات" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                 </div>
 
@@ -59,11 +63,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">شهادة مزاولة المهنة</label>
-                        <input type="text" id="licenseNote" placeholder="سيتم إرسالها عبر الواتساب" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
+                        <input type="text" id="licenseNote" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
                     </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">شهادة عدم المحكومية</label>
-                        <input type="text" id="policeNote" placeholder="سيتم إرسالها عبر الواتساب" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
+                        <input type="text" id="policeNote" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
                     </div>
                 </div>
 
@@ -102,6 +106,7 @@
                 const phone = document.getElementById('phone').value;
                 const gender = document.getElementById('gender').value;
                 const age = document.getElementById('age').value;
+                const experience = document.getElementById('experience').value;
                 const address = document.getElementById('address').value;
                 const pass = document.getElementById('password').value;
                 const confirmPass = document.getElementById('confirmPassword').value;
@@ -111,8 +116,7 @@
                     return;
                 }
 
-                // رقم الواتساب الخاص بك (يرجى التأكد من وضعه بالشكل الدولي الصحيح)
-                const adminPhone = "9627xxxxxxxx"; 
+                const adminPhone = "962789188998"; 
 
                 const message = `ممرض جديد%0a` +
                                 `------------------%0a` +
@@ -121,6 +125,7 @@
                                 `البريد: ${email}%0a` +
                                 `الجنس: ${gender}%0a` +
                                 `العمر: ${age}%0a` +
+                                `الخبرة: ${experience}%0a` +
                                 `السكن: ${address}%0a` +
                                 `------------------%0a` +
                                 `يرجى طلب شهادة المزاولة وعدم المحكومية مباشرة من الممرض.`;
