@@ -16,7 +16,7 @@
             <p class="text-slate-600 text-sm font-medium">بوابة انضمام الكادر التمريضي والكوادر الصحية المعتمدة</p>
         </div>
 
-        <!-- نموذج تسجيل الكادر المفصل -->
+        <!-- نموذج تسجيل الكادر المفصل والمحدث -->
         <div class="bg-white p-8 rounded-3xl shadow-md space-y-6">
             <h2 class="text-xl font-bold text-slate-900 text-center">نموذج طلب انضمام الكادر</h2>
             <form onsubmit="handleStaffRegister(event)" class="space-y-4">
@@ -24,30 +24,38 @@
                     <label class="block text-slate-700 font-medium text-sm mb-1">الاسم الرباعي</label>
                     <input type="text" required placeholder="الاسم الرباعي كما هو في الهوية" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">البريد الإلكتروني</label>
                         <input type="email" required placeholder="name@example.com" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                     <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">تأكيد البريد الإلكتروني</label>
-                        <input type="email" required placeholder="أعد إدخال البريد" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">رقم الهاتف (واتساب)</label>
                         <input type="tel" required placeholder="07xxxxxxxx" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">مكان السكن (المحافظة/المنطقة)</label>
-                        <input type="text" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                        <label class="block text-slate-700 font-medium text-sm mb-1">الجنس</label>
+                        <select required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
+                            <option value="">حدد الجنس</option>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">العمر (أو تاريخ الميلاد)</label>
+                        <input type="text" required placeholder="مثال: 30 سنة" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                 </div>
+
                 <div>
-                    <label class="block text-slate-700 font-medium text-sm mb-1">رقم ترخيص مزاولة المهنة (وزارة الصحة)</label>
-                    <input type="text" required placeholder="رقم الرخصة الرسمية" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                    <label class="block text-slate-700 font-medium text-sm mb-1">مكان السكن (المحافظة/المنطقة)</label>
+                    <input type="text" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">رفع شهادة مزاولة المهنة</label>
@@ -58,9 +66,16 @@
                         <input type="file" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
                     </div>
                 </div>
-                <div>
-                    <label class="block text-slate-700 font-medium text-sm mb-1">أنشئ كلمة المرور</label>
-                    <input type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">أنشئ كلمة المرور</label>
+                        <input type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">تأكيد كلمة المرور</label>
+                        <input type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                    </div>
                 </div>
                 
                 <!-- الموافقة والشروط -->
