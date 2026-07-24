@@ -16,65 +16,65 @@
             <p class="text-slate-600 text-sm font-medium">بوابة انضمام الكادر التمريضي والكوادر الصحية المعتمدة</p>
         </div>
 
-        <!-- نموذج تسجيل الكادر المفصل والمحدث -->
+        <!-- نموذج تسجيل الكادر -->
         <div class="bg-white p-8 rounded-3xl shadow-md space-y-6">
             <h2 class="text-xl font-bold text-slate-900 text-center">نموذج طلب انضمام الكادر</h2>
-            <form onsubmit="handleStaffRegister(event)" class="space-y-4">
+            <form id="staffForm" onsubmit="sendToWhatsApp(event)" class="space-y-4">
                 <div>
                     <label class="block text-slate-700 font-medium text-sm mb-1">الاسم الرباعي</label>
-                    <input type="text" required placeholder="الاسم الرباعي كما هو في الهوية" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                    <input type="text" id="fullName" required placeholder="الاسم الرباعي كما هو في الهوية" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">البريد الإلكتروني</label>
-                        <input type="email" required placeholder="name@example.com" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                        <input type="email" id="email" required placeholder="name@example.com" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">رقم الهاتف (واتساب)</label>
-                        <input type="tel" required placeholder="07xxxxxxxx" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                        <input type="tel" id="phone" required placeholder="07xxxxxxxx" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">الجنس</label>
-                        <select required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
+                        <select id="gender" required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
                             <option value="">حدد الجنس</option>
-                            <option value="male">ذكر</option>
-                            <option value="female">أنثى</option>
+                            <option value="ذكر">ذكر</option>
+                            <option value="أنثى">أنثى</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">العمر (أو تاريخ الميلاد)</label>
-                        <input type="text" required placeholder="مثال: 30 سنة" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                        <input type="text" id="age" required placeholder="مثال: 30 سنة" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-slate-700 font-medium text-sm mb-1">مكان السكن (المحافظة/المنطقة)</label>
-                    <input type="text" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                    <input type="text" id="address" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">رفع شهادة مزاولة المهنة</label>
-                        <input type="file" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                        <label class="block text-slate-700 font-medium text-sm mb-1">شهادة مزاولة المهنة</label>
+                        <input type="text" id="licenseNote" placeholder="سيتم إرسالها عبر الواتساب" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
                     </div>
                     <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">رفع شهادة عدم المحكومية</label>
-                        <input type="file" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                        <label class="block text-slate-700 font-medium text-sm mb-1">شهادة عدم المحكومية</label>
+                        <input type="text" id="policeNote" placeholder="سيتم إرسالها عبر الواتساب" value="مرفقة وجاهزة للإرسال" readonly class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-100 text-slate-500">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">أنشئ كلمة المرور</label>
-                        <input type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                        <input type="password" id="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                     <div>
                         <label class="block text-slate-700 font-medium text-sm mb-1">تأكيد كلمة المرور</label>
-                        <input type="password" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                        <input type="password" id="confirmPassword" required placeholder="••••••••" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                     </div>
                 </div>
                 
@@ -87,17 +87,45 @@
                 </div>
 
                 <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold p-3 rounded-xl shadow-md transition-all text-sm">
-                    إرسال طلب الانضمام
+                    إرسال طلب الانضمام عبر الواتساب
                 </button>
             </form>
         </div>
 
-        <!-- سكريبت الإرسال -->
+        <!-- سكريبت تحويل الطلب للواتساب -->
         <script>
-            function handleStaffRegister(e) {
+            function sendToWhatsApp(e) {
                 e.preventDefault();
-                alert('تم إرسال طلب انضمامك بنجاح، سيقوم الفريق الإداري بمراجعة الأوراق والتواصل معك قريباً.');
-                location.reload();
+                
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const gender = document.getElementById('gender').value;
+                const age = document.getElementById('age').value;
+                const address = document.getElementById('address').value;
+                const pass = document.getElementById('password').value;
+                const confirmPass = document.getElementById('confirmPassword').value;
+
+                if(pass !== confirmPass) {
+                    alert('كلمتا المرور غير متطابقتان، يرجى التأكد.');
+                    return;
+                }
+
+                // رقم الواتساب الخاص بك (يرجى التأكد من وضعه بالشكل الدولي الصحيح)
+                const adminPhone = "9627xxxxxxxx"; 
+
+                const message = `ممرض جديد%0a` +
+                                `------------------%0a` +
+                                `الاسم: ${fullName}%0a` +
+                                `الهاتف: ${phone}%0a` +
+                                `البريد: ${email}%0a` +
+                                `الجنس: ${gender}%0a` +
+                                `العمر: ${age}%0a` +
+                                `السكن: ${address}%0a` +
+                                `------------------%0a` +
+                                `يرجى طلب شهادة المزاولة وعدم المحكومية مباشرة من الممرض.`;
+
+                window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
             }
         </script>
         
