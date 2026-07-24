@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تواصل مع مركز بلسم الشفاء للتمريض المنزلي في الأردن. نحن متواجدون على مدار 24 ساعة لخدمتكم وتلبية احتياجاتكم الطبية.">
-    <meta name="keywords" content="اتصل بنا بلسم الشفاء, رقم تمريض منزلي الأردن, حجز خدمة تمريض">
+    <meta name="description" content="تواصل مع مركز بلسم الشفاء للتمريض المنزلي في الأردن. احجز خدمة تمريض منزلي فوراً عبر نموذج الحجز السريع أو الواتساب على مدار الساعة.">
+    <meta name="keywords" content="حجز خدمة تمريض منزلي, اتصل بنا بلسم الشفاء, رقم تمريض منزلي الأردن">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>اتصل بنا | بلسم الشفاء للتمريض المنزلي</title>
 </head>
@@ -25,34 +25,58 @@
         <!-- العنوان الرئيسي -->
         <header class="text-center space-y-2">
             <h1 class="text-3xl font-bold text-slate-900">اتصل بنا</h1>
-            <p class="text-slate-600">نحن هنا لخدمتكم والرد على كافة استفساراتكم الطبية على مدار الساعة.</p>
+            <p class="text-slate-600">نحن بجانبكم على مدار الساعة لتقديم الرعاية الطبية والعناية الآمنة.</p>
         </header>
 
-        <!-- بطاقات التواصل المباشر -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- الاتصال السريع / الواتساب -->
-            <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-emerald-600 space-y-4 text-center">
-                <h3 class="text-xl font-bold text-slate-900">الاستجابة الفورية (واتساب)</h3>
-                <p class="text-slate-600 text-sm">تواصل معنا مباشرة عبر الواتساب لأي استشارة أو حجز فوري.</p>
-                <a href="https://wa.me/962789188998?text=مرحباً،%20أحتاج%20استشارة%20أو%20خدمة%20تمريض%20منزلي%20بشكل%20عاجل" target="_blank" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all">
-                    مراسلة عبر الواتساب
-                </a>
-            </div>
+        <!-- نطاق الخدمة والكادر الطبي -->
+        <section class="bg-white p-8 rounded-3xl shadow-md space-y-4 border-r-8 border-blue-600">
+            <h2 class="text-xl font-bold text-blue-900">نطاق الخدمة والكادر الطبي</h2>
+            <p class="text-slate-700 leading-relaxed text-sm">
+                نغطي العاصمة عمّان، الزرقاء، وجميع المحافظات الأردنية. يوجد لدينا كادر من الممرضين والمرضات المتخصصين والمرخصين في جميع أنحاء المملكة لضمان تقديم أعلى مستوى من الرعاية المنزلية.
+            </p>
+        </section>
 
-            <!-- معلومات الموقع وساعات العمل -->
-            <div class="bg-white p-8 rounded-3xl shadow-md border-t-8 border-blue-600 space-y-4 text-center">
-                <h3 class="text-xl font-bold text-slate-900">موقعنا وساعات العمل</h3>
-                <p class="text-slate-600 text-sm">
-                    <strong>الموقع:</strong> الأردن - عمّان<br>
-                    <strong>ساعات العمل:</strong> متواجدون لخدمتكم 24 ساعة طوال أيام الأسبوع (24/7).
-                </p>
-                <div class="text-blue-900 font-bold text-sm">
-                    جاهزون لتلبية طلباتكم دائماً
+        <!-- نموذج الحجز السريع المرغوب -->
+        <section class="bg-white p-8 rounded-3xl shadow-md space-y-6">
+            <h2 class="text-2xl font-bold text-blue-900 text-center">نموذج الحجز السريع</h2>
+            <form onsubmit="sendWhatsAppOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-slate-700 font-medium text-sm mb-1">الاسم الكامل</label>
+                    <input type="text" id="clientName" required placeholder="أدخل اسمك الكريم" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
-            </div>
+                <div>
+                    <label class="block text-slate-700 font-medium text-sm mb-1">رقم الهاتف</label>
+                    <input type="tel" id="clientPhone" required placeholder="07xxxxxxxx" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
+                </div>
+                <div>
+                    <label class="block text-slate-700 font-medium text-sm mb-1">نوع الخدمة المطلوبة</label>
+                    <select id="clientService" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
+                        <option value="رعاية تمريضية عامة">رعاية تمريضية عامة</option>
+                        <option value="رعاية مرضى الجلطات">رعاية مرضى الجلطات</option>
+                        <option value="العناية بالحالات الخاصة وكبار السن">العناية بالحالات الخاصة وكبار السن</option>
+                        <option value="العناية بالمواليد والأمهات">العناية بالمواليد والأمهات</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold p-3 rounded-xl shadow-md transition-all text-sm">
+                    إرسال الطلب عبر الواتساب
+                </button>
+            </form>
+            <p class="text-xs text-slate-500 text-center">سيتم تحويلك مباشرة إلى واتساب المركز لتأكيد الطلب مع الفريق الطبي.</p>
+        </section>
 
-        </div>
+        <!-- سكريبت إرسال بيانات النموذج للواتساب -->
+        <script>
+            function sendWhatsAppOrder(e) {
+                e.preventDefault();
+                const name = document.getElementById('clientName').value;
+                const phone = document.getElementById('clientPhone').value;
+                const service = document.getElementById('clientService').value;
+                
+                const message = `مرحباً، أود حجز خدمة تمريض منزلي:%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- الخدمة المطلوبة: ${service}`;
+                const whatsappUrl = `https://wa.me/962789188998?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        </script>
 
         <!-- زر الطوارئ العائم -->
         <div class="fixed bottom-4 left-4 z-50">
