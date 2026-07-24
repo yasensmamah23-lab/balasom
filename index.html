@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
             margin: 0;
-            padding: 20px;
+            padding: 20px 20px 80px 20px;
             color: #333;
             text-align: right;
         }
@@ -17,14 +17,52 @@
             max-width: 600px;
             margin: 0 auto;
         }
-        h1 {
+        /* الهيدر وشريط التنقل */
+        .navbar {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .navbar h2 {
+            margin: 0 0 10px 0;
+            color: #1a365d;
+            font-size: 1.5rem;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            color: #2b6cb0;
+        }
+        
+        h2.section-title {
             text-align: center;
             color: #1a365d;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
         }
+        .section-desc {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* كارد الخدمات التفاعلي */
         .service-card {
             background: #ffffff;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 20px;
             margin-bottom: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -44,47 +82,108 @@
             font-size: 1.2rem;
         }
         .service-card p {
-            margin: 10px 0;
+            margin: 10px 0 0 0;
             color: #666;
             font-size: 0.95rem;
             line-height: 1.5;
         }
-        .btn-action {
-            display: inline-block;
-            margin-top: 10px;
-            color: #ffffff;
+
+        /* كارد المميزات */
+        .info-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            border-right: 5px solid #38a169;
+        }
+        .info-card h4 {
+            margin: 0 0 5px 0;
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+        .info-card p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* زر الواتساب الثابت تحت */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: #38a169;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>مركز بلسم الشفاء للتمريض المنزلي</h1>
+    <div class="navbar">
+        <h2>بلسم الشفاء</h2>
+        <div class="nav-links">
+            <a href="#">الرئيسية</a>
+            <a href="#">خدماتنا</a>
+            <a href="#">من نحن</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+    </div>
 
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالاستفسار عن خدمة العناية بالحالات الخاصة وكبار السن" class="service-card" target="_blank">
+    <h2 class="section-title">خدماتنا الطبية المتميزة</h2>
+    <p class="section-desc">نقدم باقة متكاملة من خدمات التمريض المنزلي بأعلى معايير الجودة والأمان.</p>
+
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة رعاية مرضى الجلطات" class="service-card" target="_blank">
+        <h3>رعاية مرضى الجلطات</h3>
+        <p>متابعة دورية للعلامات الحيوية، إدارة الأدوية في مواعيدها، ومساعدة المريض على استعادة قدراته الحركة بأمان تام تحت إشراف تمريضي متخصص.</p>
+    </a>
+
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة العناية بالحالات الخاصة وكبار السن" class="service-card" target="_blank">
         <h3>العناية بالحالات الخاصة وكبار السن</h3>
         <p>مرافقة دائمة وعناية شخصية متكاملة لضمان راحة وسلامة المسن وتوفير بيئة صحية ونفسية مستقرة له داخل البيت.</p>
-        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالاستفسار عن خدمة العناية بالمواليد والأمهات" class="service-card" target="_blank">
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة العناية بالمواليد والأمهات" class="service-card" target="_blank">
         <h3>العناية بالمواليد والأمهات</h3>
         <p>دعم الأم الجديدة، العناية بالصحة العامة للمولود، وتقديم الإرشادات الطبية الصحيحة لضمان فترة نفاس آمنة ومريحة.</p>
-        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالاستفسار عن خدمات الرعاية التمريضية العامة" class="service-card" target="_blank">
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمات الرعاية التمريضية العامة" class="service-card" target="_blank">
         <h3>الرعاية التمريضية العامة</h3>
         <p>تركيب المحاليل، الغيارات الجراحية، إعطاء الحقن، ومتابعة الحالات المرضية المزمنة بكل دقة واحترافية.</p>
-        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
     </a>
 
+    <h2 class="section-title">لماذا تختار بلسم الشفاء؟</h2>
+    
+    <div class="info-card">
+        <h4>كادر مرخص</h4>
+        <p>معتمدون رسمياً من وزارة الصحة.</p>
+    </div>
+
+    <div class="info-card">
+        <h4>إشراف دوري</h4>
+        <p>متابعة مستمرة لصحة المريض.</p>
+    </div>
+
+    <div class="info-card">
+        <h4>خدمة 24/7</h4>
+        <p>متواجدون على مدار الساعة.</p>
+    </div>
+
 </div>
+
+<a href="https://wa.me/962789188998?text=مرحباً، أرغب بالتواصل العاجل" class="whatsapp-float" target="_blank">
+    تواصل عاجل (واتساب)
+</a>
 
 </body>
 </html>
