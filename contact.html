@@ -6,9 +6,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>اتصل بنا | بلسم الشفاء</title>
 </head>
-<body class="bg-slate-50 p-6">
+<body class="bg-slate-50 p-6 pb-24">
     <div class="max-w-4xl mx-auto space-y-8">
         
+        <!-- شريط التنقل الموحد -->
+        <nav class="bg-white p-4 rounded-2xl shadow-sm flex flex-wrap justify-between items-center gap-4">
+            <a href="index.html" class="font-black text-xl text-blue-900">بلسم الشفاء</a>
+            <div class="flex flex-wrap gap-4 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
+                <a href="services.html" class="text-slate-600 hover:text-blue-600">خدماتنا</a>
+                <a href="contact.html" class="text-blue-600 font-bold">اتصل بنا</a>
+            </div>
+        </nav>
+
         <!-- العنوان الرئيسي -->
         <header class="text-center space-y-2">
             <h1 class="text-3xl font-bold text-slate-900">اتصل بنا</h1>
@@ -42,21 +52,21 @@
             </p>
         </section>
 
-        <!-- نموذج الحجز السريع -->
+        <!-- نموذج الحجز السريع المحدث للواتساب -->
         <section class="bg-white p-8 rounded-3xl shadow-md space-y-6">
             <h3 class="text-2xl font-bold text-blue-900">نموذج الحجز السريع</h3>
-            <form action="#" method="POST" class="space-y-4">
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)" class="space-y-4">
                 <div>
                     <label class="block text-slate-700 font-medium mb-2">الاسم الكامل</label>
-                    <input type="text" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="أدخل اسمك الكريم" required>
+                    <input type="text" id="clientName" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="أدخل اسمك الكريم" required>
                 </div>
                 <div>
                     <label class="block text-slate-700 font-medium mb-2">رقم الهاتف</label>
-                    <input type="tel" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="07xxxxxxxx" required>
+                    <input type="tel" id="clientPhone" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="07xxxxxxxx" required>
                 </div>
                 <div>
                     <label class="block text-slate-700 font-medium mb-2">نوع الخدمة المطلوبة</label>
-                    <select class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                    <select id="clientService" class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none">
                         <option>رعاية تمريضية عامة</option>
                         <option>رعاية مرضى الجلطات</option>
                         <option>العناية بالمواليد والأمهات</option>
@@ -64,11 +74,33 @@
                     </select>
                 </div>
                 <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold p-4 rounded-xl shadow-lg transition-all">
-                    إرسال الطلب
+                    إرسال الطلب عبر الواتساب
                 </button>
-                <p class="text-xs text-slate-500 text-center mt-2">سيتم التواصل معك فوراً من قبل الفريق الطبي المختص لتأكيد الطلب.</p>
+                <p class="text-xs text-slate-500 text-center mt-2">سيتم تحويلك مباشرة إلى واتساب المركز لتأكيد الطلب مع الفريق الطبي.</p>
             </form>
         </section>
+
+        <!-- سكريبت البرمجة لتحويل البيانات للواتساب -->
+        <script>
+            function sendToWhatsApp(event) {
+                event.preventDefault();
+                const name = document.getElementById('clientName').value;
+                const phone = document.getElementById('clientPhone').value;
+                const service = document.getElementById('clientService').value;
+
+                const message = `مرحباً، أود حجز خدمة تمريض منزلي:\n- الاسم: ${name}\n- الهاتف: ${phone}\n- الخدمة: ${service}`;
+                const encodedMessage = encodeURIComponent(message);
+                
+                window.open(`https://wa.me/962789188998?text=${encodedMessage}`, '_blank');
+            }
+        </script>
+
+        <!-- زر الطوارئ العائم -->
+        <div class="fixed bottom-4 left-4 z-50">
+            <a href="https://wa.me/962789188998?text=مرحباً،%20أحتاج%20استشارة%20أو%20خدمة%20تمريض%20منزلي%20بشكل%20عاجل" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-full shadow-2xl flex items-center space-x-2 space-x-reverse font-bold transition-all animate-bounce">
+                <span>تواصل عاجل (واتساب)</span>
+            </a>
+        </div>
 
         <div class="text-center mt-10">
             <a href="index.html" class="text-blue-700 font-bold underline">العودة للرئيسية</a>
