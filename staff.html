@@ -55,19 +55,58 @@
                     </div>
                 </div>
 
+                <!-- الإضافات الجديدة: التخصص، المناوبات، والتوفر -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">التخصص الدقيق</label>
+                        <select id="specialty" required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
+                            <option value="">اختر التخصص</option>
+                            <option value="تمريض عام">تمريض عام</option>
+                            <option value="عناية حثيثة ICU">عناية حثيثة ICU</option>
+                            <option value="رعاية مسنين">رعاية مسنين</option>
+                            <option value="إسعاف وطوارئ">إسعاف وطوارئ</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">طبيعة المناوبات</label>
+                        <select id="shiftType" required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
+                            <option value="">اختر المناوبة</option>
+                            <option value="مقيم 24 ساعة">مقيم 24 ساعة</option>
+                            <option value="مناوبة نهارية">مناوبة نهارية</option>
+                            <option value="مناوبة ليلية">مناوبة ليلية</option>
+                            <option value="شفتات مرنة">شفتات مرنة</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-slate-700 font-medium text-sm mb-1">حالة التوفر</label>
+                        <select id="availability" required class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm bg-white">
+                            <option value="">اختر حالة التوفر</option>
+                            <option value="متفرغ تماماً للعمل الفوري">متفرغ تماماً للعمل الفوري</option>
+                            <option value="مرتبط بعمل جزئي/محدود">مرتبط بعمل جزئي/محدود</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div>
                     <label class="block text-slate-700 font-medium text-sm mb-1">مكان السكن (المحافظة/المنطقة)</label>
                     <input type="text" id="address" required placeholder="مثال: عمان - صويلح" class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm">
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- حقول رفع الملفات والسي في -->
+                <div class="space-y-4">
                     <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">شهادة مزاولة المهنة</label>
-                        <input type="file" id="licenseFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                        <label class="block text-slate-700 font-medium text-sm mb-1">رفع السيرة الذاتية (CV)</label>
+                        <input type="file" id="cvFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
                     </div>
-                    <div>
-                        <label class="block text-slate-700 font-medium text-sm mb-1">شهادة عدم المحكومية</label>
-                        <input type="file" id="policeFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-slate-700 font-medium text-sm mb-1">شهادة مزاولة المهنة</label>
+                            <input type="file" id="licenseFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-medium text-sm mb-1">شهادة عدم المحكومية</label>
+                            <input type="file" id="policeFile" required class="w-full p-2 rounded-xl border border-slate-200 text-xs bg-slate-50">
+                        </div>
                     </div>
                 </div>
 
@@ -107,6 +146,9 @@
                 const gender = document.getElementById('gender').value;
                 const age = document.getElementById('age').value;
                 const experience = document.getElementById('experience').value;
+                const specialty = document.getElementById('specialty').value;
+                const shiftType = document.getElementById('shiftType').value;
+                const availability = document.getElementById('availability').value;
                 const address = document.getElementById('address').value;
                 const pass = document.getElementById('password').value;
                 const confirmPass = document.getElementById('confirmPassword').value;
@@ -123,12 +165,14 @@
                                 `الاسم: ${fullName}%0a` +
                                 `الهاتف: ${phone}%0a` +
                                 `البريد: ${email}%0a` +
-                                `الجنس: ${gender}%0a` +
-                                `العمر: ${age}%0a` +
-                                `الخبرة: ${experience}%0a` +
+                                `الجنس: ${gender} | العمر: ${age}%0a` +
+                                `الخـبرة: ${experience}%0a` +
+                                `التخصص: ${specialty}%0a` +
+                                `المناوبات: ${shiftType}%0a` +
+                                `التوفر: ${availability}%0a` +
                                 `السكن: ${address}%0a` +
                                 `------------------%0a` +
-                                `تم اختيار الملفات ومرفقة للطلب.`;
+                                `تم إرفاق السي في والشهادات للطلب.`;
 
                 window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
             }
