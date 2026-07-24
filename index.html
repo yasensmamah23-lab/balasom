@@ -3,60 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="مركز بلسم الشفاء للتمريض المنزلي في الأردن. نقدم رعاية صحية متكاملة، كادر مرخص من وزارة الصحة على مدار 24 ساعة لمرضى الجلطات، كبار السن والمواليد.">
-    <meta name="keywords" content="تمريض منزلي الأردن, رعاية مرضى الجلطات, كادر تمريض مرخص, بلسم الشفاء">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>بلسم الشفاء | للتمريض المنزلي والأمان الطبي في الأردن</title>
+    <title>مركز بلسم الشفاء للتمريض المنزلي</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            text-align: right;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            margin-bottom: 25px;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-right: 5px solid #2b6cb0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            margin-top: 0;
+            color: #2b6cb0;
+            font-size: 1.2rem;
+        }
+        .service-card p {
+            margin: 10px 0;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .btn-action {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ffffff;
+            background-color: #38a169;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 p-6 pb-24">
-    <div class="max-w-4xl mx-auto space-y-8">
-        
-        <!-- شريط التنقل المعدل والمضبوط بدقة -->
-        <nav class="bg-white p-4 rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
-            <a href="index.html" class="font-black text-xl text-blue-900">بلسم الشفاء</a>
-            <div class="flex flex-wrap justify-center items-center gap-6 text-sm font-medium">
-                <a href="index.html" class="text-blue-600 font-bold">الرئيسية</a>
-                <a href="services.html" class="text-slate-600 hover:text-blue-600">خدماتنا</a>
-                <a href="about.html" class="text-slate-600 hover:text-blue-600">من نحن</a>
-                <a href="contact.html" class="text-slate-600 hover:text-blue-600">اتصل بنا</a>
-            </div>
-        </nav>
+<body>
 
-        <!-- الهيرو / الترحيب الأساسي -->
-        <header class="bg-white p-8 rounded-3xl shadow-md text-center space-y-4">
-            <h1 class="text-3xl md:text-4xl font-black text-slate-900">بلسم الشفاء للتمريض المنزلي</h1>
-            <p class="text-slate-600 max-w-xl mx-auto leading-relaxed">
-                رعاية طبية متكاملة بلمسة حنان مألوفة.. في دفء بيتك. نخبة من الممرضين والممرضات الحاصلين على مزاولة مهنة رسمية لخدمة أحبائكم.
-            </p>
-            <div class="pt-2 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="services.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-center">استعرض خدماتنا</a>
-                <a href="contact.html" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-6 py-3 rounded-xl transition-all text-center">تواصل معنا</a>
-            </div>
-        </header>
+<div class="container">
+    <h1>مركز بلسم الشفاء للتمريض المنزلي</h1>
 
-        <!-- ميزات سريعة تؤسس الثقة -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-white p-6 rounded-2xl shadow-sm text-center space-y-2">
-                <h3 class="font-bold text-blue-900 text-lg">كادر مرخص</h3>
-                <p class="text-slate-600 text-sm">حاصلون على تراخيص وزارة الصحة الرسمية بالكامل.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm text-center space-y-2">
-                <h3 class="font-bold text-blue-900 text-lg">إشراف دوري</h3>
-                <p class="text-slate-600 text-sm">متابعة مستمرة لصحة المريض وسلامته.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm text-center space-y-2">
-                <h3 class="font-bold text-blue-900 text-lg">متوفرون 24/7</h3>
-                <p class="text-slate-600 text-sm">خدمة مستمرة على مدار الساعة طوال الأسبوع.</p>
-            </div>
-        </section>
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالاستفسار عن خدمة العناية بالحالات الخاصة وكبار السن" class="service-card" target="_blank">
+        <h3>العناية بالحالات الخاصة وكبار السن</h3>
+        <p>مرافقة دائمة وعناية شخصية متكاملة لضمان راحة وسلامة المسن وتوفير بيئة صحية ونفسية مستقرة له داخل البيت.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
+    </a>
 
-        <!-- زر الطوارئ العائم -->
-        <div class="fixed bottom-4 left-4 z-50">
-            <a href="https://wa.me/962789188998?text=مرحباً،%20أحتاج%20استشارة%20أو%20خدمة%20تمريض%20منزلي%20بشكل%20عاجل" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-full shadow-2xl flex items-center space-x-2 space-x-reverse font-bold transition-all animate-bounce">
-                <span>تواصل عاجل (واتساب)</span>
-            </a>
-        </div>
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالاستفسار عن خدمة العناية بالمواليد والأمهات" class="service-card" target="_blank">
+        <h3>العناية بالمواليد والأمهات</h3>
+        <p>دعم الأم الجديدة، العناية بالصحة العامة للمولود، وتقديم الإرشادات الطبية الصحيحة لضمان فترة نفاس آمنة ومريحة.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
+    </a>
 
-    </div>
+    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالاستفسار عن خدمات الرعاية التمريضية العامة" class="service-card" target="_blank">
+        <h3>الرعاية التمريضية العامة</h3>
+        <p>تركيب المحاليل، الغيارات الجراحية، إعطاء الحقن، ومتابعة الحالات المرضية المزمنة بكل دقة واحترافية.</p>
+        <span class="btn-action">احجز الخدمة عبر الواتساب</span>
+    </a>
+
+</div>
+
 </body>
 </html>
