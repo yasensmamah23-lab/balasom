@@ -3,175 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز بلسم الشفاء للتمريض المنزلي</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px 20px 80px 20px;
-            color: #333;
-            text-align: right;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .navbar {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 15px 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .navbar h2 {
-            margin: 0 0 10px 0;
-            color: #1a365d;
-            font-size: 1.5rem;
-        }
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 0.95rem;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
-            font-weight: 600;
-        }
-        
-        h2.section-title {
-            text-align: center;
-            color: #1a365d;
-            font-size: 1.4rem;
-            margin: 30px 0 15px 0;
-        }
-        .section-desc {
-            text-align: center;
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .service-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            border-right: 5px solid #2b6cb0;
-        }
-        .service-card h3 {
-            margin-top: 0;
-            color: #2b6cb0;
-            font-size: 1.2rem;
-        }
-        .service-card p {
-            margin: 10px 0 0 0;
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .info-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-            border-right: 5px solid #38a169;
-        }
-        .info-card h4 {
-            margin: 0 0 5px 0;
-            color: #2d3748;
-            font-size: 1.05rem;
-        }
-        .info-card p {
-            margin: 0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #38a169;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            font-size: 1rem;
-            z-index: 1000;
-        }
-    </style>
+    <title>مركز بلسم الشفاء للتمريض المنزلي | الزرقاء وعمان الغربية</title>
+    <meta name="description" content="رعاية تمريضية منزلية متكاملة بمرجعية طبية واحترافية عالية، معتمدة ومقدمة من ممرضين قانونيين مرخصين من وزارة الصحة الأردنية.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <div class="navbar">
-        <h2>بلسم الشفاء</h2>
-        <div class="nav-links">
-            <a href="#">الرئيسية</a>
-            <a href="#">خدماتنا</a>
-            <a href="#">من نحن</a>
-            <a href="#">اتصل بنا</a>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>📞 للتنسيق التمريضي المباشر: <a href="tel:0789188998">0789188998</a> | نغطي الزرقاء وعمان الغربية</span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>بلسم الشفاء <span>للتمريض المنزلي</span></h2>
+            </div>
+            <nav class="nav">
+                <a href="#home">الرئيسية</a>
+                <a href="#about">عن المركز</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#careers">الوظائف</a>
+                <a href="#contact" class="btn-nav">اتصل بنا</a>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <h2 class="section-title">خدماتنا الطبية المتميزة</h2>
-    <p class="section-desc">نقدم باقة متكاملة من خدمات التمريض المنزلي بأعلى معايير الجودة والأمان.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">معتمد ومؤهل قانونياً</span>
+                <h1>الرعاية التمريضية المتقدمة.. في قلب منزلك</h1>
+                <p>منظومة تمريضية متكاملة يُشرف عليها كادر من الممرضين والممرضات القانونيين المرخصين رسمياً من وزارة الصحة الأردنية، لضمان أعلى مستويات السلامة والأمان لأسرتكم.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="btn btn-whatsapp" target="_blank">احجز ممرضك عبر الواتساب</a>
+                    <a href="#services" class="btn btn-outline">استعرض الخدمات الطبية</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة رعاية مرضى الجلطات" class="service-card" target="_blank">
-        <h3>رعاية مرضى الجلطات</h3>
-        <p>متابعة دورية للعلامات الحيوية، إدارة الأدوية في مواعيدها، ومساعدة المريض على استعادة قدراته الحركة بأمان تام تحت إشراف تمريضي متخصص.</p>
+    <!-- Trust Badges -->
+    <section class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="icon">🏛️</div>
+                <h3>ترخيص رسمي</h3>
+                <p>مرخص ومسجل لدى وزارة الصحة الأردنية</p>
+            </div>
+            <div class="trust-item">
+                <div class="icon">🩺</div>
+                <h3>ممرضون قانونيون</h3>
+                <p>كادر يحمل مزاولة مهنة ورخص قانونية نافذة</p>
+            </div>
+            <div class="trust-item">
+                <div class="icon">⚡</div>
+                <h3>استجابة سريعة</h3>
+                <p>تغطية مباشرة لمناطق الزرقاء وعمان الغربية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-title">
+                <h2>عن مركز بلسم الشفاء</h2>
+                <p>المعيار الأعلى للرعاية التمريضية المنزلية في الأردن</p>
+            </div>
+            <div class="about-content">
+                <p>تأسس <strong>مركز بلسم الشفاء للتمريض المنزلي</strong> ليشكل مرجعاً في تقديم خدمات التمريض المنزلي المعتمدة. نلتزم بنقل الرعاية السريرية المتقدمة من المستشفيات إلى البيئة الأكثر راحة للمريض وهي منزله، مع مراعاة كاملة لأعلى معايير ضبط العدوى والسلامة الطبية.</p>
+                <div class="ceo-quote">
+                    <blockquote>
+                        "نحن لا نقدم مجرد خدمة تمريضية، بل نتحمل أمانة طبية وإنسانية كاملة تجاه كل مريض نخدمه. اخترنا كوادرنا بعناية لضمان أعلى مستويات الاحترافية والأمان لأسرتكم."
+                    </blockquote>
+                    <span>— إدارة مركز بلسم الشفاء</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدماتنا السريرية المتخصصة</h2>
+                <p>رعاية طبية متكاملة تتناسب مع احتياجات كل مريض</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-icon">💉</div>
+                    <h3>التمريض المنزلي الشامل</h3>
+                    <p>متابعة العلامات الحيوية، إعطاء الأدوية والمحاليل الوريدية، ورعاية القسطرة والأنابيب الطبية بمهنية عالية.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">👴</div>
+                    <h3>رعاية كبار السن</h3>
+                    <p>خطط مخصصة للرعاية اليومية بالمسنين، المساعدة في الحركة والتغذية، والوقاية من قروح الفراش والمضاعفات.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">🩹</div>
+                    <h3>العناية بالجروح وقدم السكري</h3>
+                    <p>تطبيق أحدث بروتوكولات التغيير المعقم على الجروح المعقدة والقروح الجراحية لسرعة التعافي.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">🏥</div>
+                    <h3>رعاية ما بعد الجراحة</h3>
+                    <p>إدارة التعافي المنزلي بعد الخروج من المستشفى، السيطرة على الألم، ومتابعة المفارز بناءً على توجيهات الجراح.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">🧪</div>
+                    <h3>السحب المخبري والعلاج الوريدي</h3>
+                    <p>سحب العينات المخبرية وإعطاء المضادات الحيوية والمحاليل وريدياً داخل المنزل دون عناء التنقل.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">📊</div>
+                    <h3>متابعة الأمراض المزمنة</h3>
+                    <p>إشراف دوري لمرضى الضغط، السكري، والقلب للحد من الانتكاسات والدخول المتكرر للمستشفيات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="careers section">
+        <div class="container">
+            <div class="section-title">
+                <h2>انضم إلى كادرنا التمريضي</h2>
+                <p>نبحث دائماً عن الكفاءات التمريضية المتميزة</p>
+            </div>
+            <div class="careers-box">
+                <h3>شروط الانضمام لفريق بلسم الشفاء:</h3>
+                <ul>
+                    <li>درجة البكالوريوس أو الدبلوم في التمريض من مؤسسة تعليمية معتمدة.</li>
+                    <li>رخصة مزاولة مهنة ورخصة تمريض قانوني (RN) نافذة من وزارة الصحة الأردنية.</li>
+                    <li>خبرة سريرية لا تقل عن سنتين في المستشفيات أو أقسام الطوارئ والعناية الحثيثة.</li>
+                    <li>الالتزام بأعلى معايير الانضباط والأخلاق المهنية.</li>
+                </ul>
+                <p class="apply-text">لتقديم الطلبات، يرجى إرسال السيرة الذاتية عبر الواتساب على الرقم: <strong>0789188998</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل معنا مباشرة</h2>
+                <p>فريق التنسيق التمريضي جاهز لمساعدتكم على مدار الساعة</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>بيانات التواصل الرسمي</h3>
+                    <p>📍 <strong>المقر الرئيسي:</strong> الزرقاء - بالقرب من مستشفى جبل الزيتون / وادي الحجر</p>
+                    <p>🌍 <strong>مناطق التغطية:</strong> محافظة الزرقاء | عمان الغربية</p>
+                    <p>📞 <strong>الهاتف المباشر:</strong> <a href="tel:0789188998">0789188998</a></p>
+                    <p>💬 <strong>الواتساب:</strong> <a href="https://wa.me/962789188998" target="_blank">962789188998+</a></p>
+                </div>
+                <div class="contact-action">
+                    <h3>احصل على استشارة تمريضية فورية</h3>
+                    <p>اضغط على الزر أدناه لبدء المحادثة المباشرة مع مسؤول التنسيق التمريضي:</p>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أحتاج%20إلى%20استشارة%20تمريضية%20منزلية" class="btn btn-whatsapp btn-large" target="_blank">تواصل عبر الواتساب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2026 مركز بلسم الشفاء للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب">
+        💬
     </a>
-
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة العناية بالحالات الخاصة وكبار السن" class="service-card" target="_blank">
-        <h3>العناية بالحالات الخاصة وكبار السن</h3>
-        <p>مرافقة دائمة وعناية شخصية متكاملة لضمان راحة وسلامة المسن وتوفير بيئة صحية ونفسية مستقرة له داخل البيت.</p>
-    </a>
-
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمة العناية بالمواليد والأمهات" class="service-card" target="_blank">
-        <h3>العناية بالمواليد والأمهات</h3>
-        <p>دعم الأم الجديدة، العناية بالصحة العامة للمولود، وتقديم الإرشادات الطبية الصحيحة لضمان فترة نفاس آمنة ومريحة.</p>
-    </a>
-
-    <a href="https://wa.me/962789188998?text=مرحباً، أرغب بالحجز والاستفسار عن خدمات الرعاية التمريضية العامة" class="service-card" target="_blank">
-        <h3>الرعاية التمريضية العامة</h3>
-        <p>تركيب المحاليل، الغيارات الجراحية، إعطاء الحقن، ومتابعة الحالات المرضية المزمنة بكل دقة واحترافية.</p>
-    </a>
-
-    <h2 class="section-title">لماذا تختار بلسم الشفاء؟</h2>
-    
-    <div class="info-card">
-        <h4>كادر مرخص</h4>
-        <p>معتمدون رسمياً من وزارة الصحة.</p>
-    </div>
-
-    <div class="info-card">
-        <h4>إشراف دوري</h4>
-        <p>متابعة مستمرة لصحة المريض.</p>
-    </div>
-
-    <div class="info-card">
-        <h4>خدمة 24/7</h4>
-        <p>متواجدون على مدار الساعة.</p>
-    </div>
-
-</div>
-
-<a href="https://wa.me/962789188998?text=مرحباً، أرغب بالتواصل العاجل" class="whatsapp-float" target="_blank">
-    تواصل عاجل (واتساب)
-</a>
 
 </body>
 </html>
