@@ -33,7 +33,6 @@ a {
     margin: 0 auto;
 }
 
-/* Top Bar */
 .top-bar {
     background-color: var(--primary);
     color: var(--white);
@@ -46,7 +45,6 @@ a {
     font-weight: bold;
 }
 
-/* Header */
 .header {
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -75,7 +73,7 @@ a {
     color: var(--dark);
     transition: color 0.3s;
 }
-.nav a:hover {
+.nav a:hover, .nav a.active {
     color: var(--secondary);
 }
 .btn-nav {
@@ -85,11 +83,10 @@ a {
     border-radius: 5px;
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(135deg, rgba(26,54,93,0.95), rgba(0,163,196,0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1350&q=80') center/cover;
     color: var(--white);
-    padding: 100px 0;
+    padding: 90px 0;
     text-align: center;
 }
 .badge {
@@ -99,12 +96,12 @@ a {
     font-size: 0.85rem;
 }
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin: 20px 0;
     font-weight: 800;
 }
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 800px;
     margin: 0 auto 30px;
 }
@@ -114,16 +111,16 @@ a {
     gap: 15px;
 }
 
-/* Buttons */
 .btn {
     padding: 12px 28px;
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
-    transition: transform 0.2s, background 0.3s;
+    transition: transform 0.2s;
 }
-.btn:hover {
-    transform: translateY(-2px);
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
 }
 .btn-whatsapp {
     background-color: var(--accent);
@@ -134,7 +131,6 @@ a {
     color: var(--white);
 }
 
-/* Trust Bar */
 .trust-bar {
     background: var(--white);
     padding: 40px 0;
@@ -155,27 +151,21 @@ a {
     margin-bottom: 5px;
 }
 
-/* Sections */
 .section {
-    padding: 80px 0;
+    padding: 70px 0;
 }
 .bg-light {
     background-color: var(--light);
 }
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .section-title h2 {
     color: var(--primary);
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-.section-title p {
-    color: #718096;
+    font-size: 2rem;
 }
 
-/* Services Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,10 +176,6 @@ a {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-.service-card:hover {
-    transform: translateY(-5px);
 }
 .card-icon {
     font-size: 2.5rem;
@@ -200,56 +186,22 @@ a {
     margin-bottom: 10px;
 }
 
-/* About & CEO Quote */
 .about-content {
     max-width: 900px;
     margin: 0 auto;
     font-size: 1.1rem;
-    text-align: justify;
 }
 .ceo-quote {
     margin-top: 30px;
     background: var(--light);
     border-right: 4px solid var(--secondary);
     padding: 20px;
-    border-radius: 4px;
-}
-.ceo-quote blockquote {
-    font-style: italic;
-    color: var(--dark);
-}
-.ceo-quote span {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: var(--primary);
 }
 
-/* Careers */
-.careers-box {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    max-width: 800px;
-    margin: 0 auto;
-}
-.careers-box ul {
-    margin: 20px 0;
-    padding-right: 20px;
-}
-.careers-box li {
-    margin-bottom: 10px;
-}
-
-/* Contact */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-}
-.contact-info p {
-    margin-bottom: 15px;
 }
 .contact-action {
     background: var(--white);
@@ -259,22 +211,17 @@ a {
 }
 .btn-large {
     width: 100%;
-    margin-top: 20px;
-    font-size: 1.1rem;
+    margin-top: 15px;
 }
 
-/* Footer */
 .footer {
     background: var(--primary);
     color: var(--white);
     padding: 20px 0;
-    font-size: 0.9rem;
 }
-.text-center {
-    text-align: center;
-}
+.text-center { text-align: center; }
+.margin-top { margin-top: 30px; }
 
-/* Floating WhatsApp */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -293,20 +240,8 @@ a {
     justify-content: center;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero-btns {
-        flex-direction: column;
-    }
+    .nav-container { flex-direction: column; gap: 15px; }
+    .hero h1 { font-size: 1.8rem; }
+    .hero-btns { flex-direction: column; }
 }
