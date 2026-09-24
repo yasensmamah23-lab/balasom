@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://yasensmamah23-lab.github.io/balasom/sitemap.xml
