@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز بلسم الشفاء للتمريض المنزلي | عمان والزرقاء وكافة المحافظات</title>
-    <meta name="description" content="رعاية تمريضية منزلية متكاملة بمرجعية طبية واحترافية عالية، معتمدة ومقدمة من ممرضين قانونيين مرخصين من وزارة الصحة الأردنية.">
+    <title>مؤسسة بلسم الشفاء للتمريض المنزلي | الزرقاء وعمان وكافة المحافظات</title>
+    <meta name="description" content="رعاية تمريضية منزلية متكاملة 24/7 في الزرقاء وعمان بإشراف ممرضين قانونيين مرخصين من وزارة الصحة الأردنية ونقابة الممرضين. اتصل الآن: 0789188998">
+    <meta name="keywords" content="تمريض منزلي الزرقاء, ممرض منزلي الأردن, رعاية كبار السن في المنزل, مرافق مريض, بلسم الشفاء للتمريض المنزلي">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="مؤسسة بلسم الشفاء للتمريض المنزلي">
+    <meta property="og:description" content="رعاية تمريضية منزلية متكاملة 24/7 بإشراف كادر مرخص من وزارة الصحة الأردنية.">
+    <meta property="og:type" content="website">
+
+    <!-- Local & Medical Business Schema (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "مؤسسة بلسم الشفاء للتمريض المنزلي",
+      "telephone": "+962789188998",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "الزرقاء",
+        "addressCountry": "JO"
+      },
+      "areaServed": ["الزرقاء", "عمان", "الأردن"],
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "550 JOD - 1650 JOD"
+    }
+    </script>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -33,7 +57,7 @@
 <body>
 
     <div class="top-bar">
-        <span>📞 للتنسيق التمريضي المباشر: <a href="tel:0789188998">0789188998</a> | نغطي عمان والزرقاء وجميع محافظات المملكة</span>
+        <span>📞 للتنسيق التمريضي المباشر 24/7: <a href="tel:0789188998" onclick="fbq('track', 'Contact');">0789188998</a> | نغطي الزرقاء وعمان وجميع محافظات المملكة</span>
     </div>
 
     <header class="header">
@@ -43,9 +67,9 @@
             </div>
             <nav class="nav">
                 <a href="index.html" class="active">الرئيسية</a>
-                <a href="about.html">عن المركز</a>
+                <a href="#packages">الباقات والأسعار</a>
                 <a href="services.html">خدماتنا</a>
-                <a href="contact.html">تواصل معنا</a>
+                <a href="#booking" class="btn-nav">احجز الآن</a>
             </nav>
         </div>
     </header>
@@ -53,12 +77,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="badge">معتمد ومؤهل قانونياً</span>
+                <span class="badge">مرخص من وزارة الصحة ونقابة الممرضين الأردنية</span>
                 <h1>الرعاية التمريضية المتقدمة.. في قلب منزلك</h1>
-                <p>منظومة تمريضية متكاملة يُشرف عليها كادر من الممرضين والممرضات القانونيين المرخصين رسمياً من وزارة الصحة الأردنية، لضمان أعلى مستويات السلامة والأمان لأسرتكم.</p>
+                <p>منظومة تمريضية متكاملة على مدار 24 ساعة يُشرف عليها كادر من الممرضين والممرضات القانونيين المرخصين رسمياً، لضمان أعلى مستويات الأمان الطبي لأسرتكم في الزرقاء وعمان وكافة المحافظات.</p>
                 <div class="hero-btns">
-                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="btn btn-whatsapp" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> احجز ممرضك عبر الواتساب</a>
-                    <a href="services.html" class="btn btn-outline">استعرض الخدمات الطبية</a>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="btn btn-whatsapp" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> تواصل عبر الواتساب</a>
+                    <a href="tel:0789188998" class="btn btn-outline" onclick="fbq('track', 'Contact');"><i class="fas fa-phone-alt"></i> اتصال مباشر: 0789188998</a>
                 </div>
             </div>
         </div>
@@ -68,18 +92,18 @@
         <div class="container trust-grid">
             <div class="trust-item">
                 <div class="icon">🏛️</div>
-                <h3>ترخيص رسمي</h3>
-                <p>مرخص ومسجل لدى وزارة الصحة الأردنية</p>
+                <h3>ترخيص رسمي معتمد</h3>
+                <p>مرخص ومسجل لدى وزارة الصحة الأردنية ونقابة الممرضين</p>
             </div>
             <div class="trust-item">
                 <div class="icon">🩺</div>
-                <h3>ممرضون قانونيون</h3>
-                <p>كادر يحمل مزاولة مهنة ورخص قانونية نافذة</p>
+                <h3>ممرضون وممرضات قانونيون</h3>
+                <p>كادر يحمل مزاولة مهنة ورخص قانونية نافذة وخبرة سريرية</p>
             </div>
             <div class="trust-item">
                 <div class="icon">⚡</div>
-                <h3>استجابة سريعة</h3>
-                <p>تغطية شاملة لمناطق عمان والزرقاء وكافة محافظات المملكة</p>
+                <h3>استجابة فورية 24/7</h3>
+                <p>تغطية شاملة لمناطق الزرقاء وعمان وكافة محافظات المملكة</p>
             </div>
         </div>
     </section>
@@ -92,9 +116,19 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>رعاية كبار السن ومرضى الجلطات</h3>
+                    <p>برامج رعاية متكاملة لإعادة التأهيل، منع التقرحات والجلطات، متابعة العلامات الحيوية، والتغذية الأنبوبية بدقة.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>توفير مرافقين ومرافقات</h3>
+                    <p>توفير كوادر مؤهلة للمرافقة اليومية، المساعدة في الحركة والأنشطة الشخصية، والمؤانسة لكبار السن والمرضى.</p>
+                </div>
+                <div class="service-card">
                     <div class="card-icon">🩸</div>
-                    <h3>سحب عينات الدم الفحوصات المخبرية</h3>
-                    <p>سحب كافة عينات الفحوصات الطبية والدم من المنزل وإرسالها للمختبرات المعتمدة واستلام النتائج بسرعة ودقة.</p>
+                    <h3>سحب عينات الدم والفحوصات المخبرية</h3>
+                    <p>سحب كافة عينات الفحوصات الطبية من المنزل وإرسالها للمختبرات المعتمدة واستلام النتائج بسرعة ودقة.</p>
                 </div>
                 <div class="service-card">
                     <div class="card-icon">🩻</div>
@@ -104,39 +138,172 @@
                 <div class="service-card">
                     <div class="card-icon">🤰</div>
                     <h3>رعاية الأمهات الحوامل</h3>
-                    <p>متابعة التغذية، العلامات الحيوية، الفحوصات الفلكية، والراحة التامة للحامل طوال فترة الحمل ومابعد الولادة.</p>
+                    <p>متابعة التغذية، العلامات الحيوية، الفحوصات المخبرية الدورية، والراحة التامة للحامل طوال فترة الحمل وما بعد الولادة.</p>
                 </div>
                 <div class="service-card">
                     <div class="card-icon">👶</div>
                     <h3>العناية بالأطفال وحديثي الولادة</h3>
                     <p>رعاية تمريضية فائقة للرضّع وحديثي الولادة، متابعة النمو، العناية بالسرة، والدعم الكامل للأم.</p>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🧠</div>
-                    <h3>رعاية كبار السن ومرضى الجلطات</h3>
-                    <p>برامج رعاية متكاملة لإعادة التأهيل، منع الجلطات الثانوية، متابعة الحركة، والتغذية الأنبوبية بدقة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الباقات الشهرية -->
+    <section id="packages" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>الباقات الشهرية المعتمدة</h2>
+                <p>خطط رعاية مرنة وواضحة تناسب حالة المريض وميزانية الأسرة</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- باقة المرافق -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>باقة المرافق الشخصي</h3>
+                        <p class="subtitle">رعاية ومؤانسة غير تمريضية</p>
+                        <div class="price">550 <span>دينار / شهرياً</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> دوام 8 ساعات يومياً</li>
+                        <li><i class="fas fa-check"></i> المساعدة في الحركة والنظافة الشخصية</li>
+                        <li><i class="fas fa-check"></i> تذكير بمواعيد الأدوية والوجبات</li>
+                        <li><i class="fas fa-check"></i> متوفر مرافقين ومرافقات</li>
+                    </ul>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أرغب%20بحجز%20باقة%20المرافق%20الشخصي%20(8%20ساعات%20-%20550%20دينار)" class="btn btn-primary btn-block" target="_blank" onclick="fbq('track', 'Lead');">اطلب هذه الباقة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🤝</div>
-                    <h3>توفير مرافقين ومرافقات (غير تمريض)</h3>
-                    <p>توفير كوادر مؤهلة للمرافقة اليومية، المساعدة في الأنشطة الشخصية، والمؤانسة لكبار السن والمرضى.</p>
+
+                <!-- باقة التمريض 12 ساعة (الأكثر طلباً) -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">الأكثر طلباً</div>
+                    <div class="pricing-header">
+                        <h3>تمريض منزلي (12 ساعة)</h3>
+                        <p class="subtitle">إشراف تمريضي متخصص</p>
+                        <div class="price">850 <span>دينار / شهرياً</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> شفت 12 ساعة (صباحي أو ليلي)</li>
+                        <li><i class="fas fa-check"></i> ممرض/ة قانوني مرخص</li>
+                        <li><i class="fas fa-check"></i> إعطاء العلاجات الوريدية والعضلية</li>
+                        <li><i class="fas fa-check"></i> مراقبة العلامات الحيوية والتقرحات</li>
+                    </ul>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أرغب%20بحجز%20باقة%20التمريض%20المنزلي%2012%20ساعة%20(850%20دينار)" class="btn btn-whatsapp btn-block" target="_blank" onclick="fbq('track', 'Lead');">اطلب هذه الباقة الآن</a>
+                </div>
+
+                <!-- باقة الإقامة 24 ساعة -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>تمريض منزلي شامل (24 ساعة)</h3>
+                        <p class="subtitle">رعاية مستمرة على مدار الساعة</p>
+                        <div class="price">1650 <span>دينار / شهرياً</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> تغطية 24 ساعة متواصلة</li>
+                        <li><i class="fas fa-check"></i> مثالية للحالات الحرجة والجلطات</li>
+                        <li><i class="fas fa-check"></i> عناية كاملة بالتغذية الأنبوبية والقسطرة</li>
+                        <li><i class="fas fa-check"></i> إشراف طبي مستمر وتقارير دورية</li>
+                    </ul>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أرغب%20بحجز%20باقة%20التمريض%20المنزلي%2024%20ساعة%20(1650%20دينار)" class="btn btn-primary btn-block" target="_blank" onclick="fbq('track', 'Lead');">اطلب هذه الباقة</a>
                 </div>
             </div>
-            <div class="text-center margin-top">
-                <a href="services.html" class="btn btn-primary">عرض جميع الخدمات بالتفصيل</a>
+        </div>
+    </section>
+
+    <!-- قسم الحجز السريع والأسئلة الشائعة -->
+    <section id="booking" class="section bg-light">
+        <div class="container booking-faq-grid">
+            <!-- نموذج الحجز السريع -->
+            <div class="booking-box">
+                <h3>اطلب تقييم وحجز سريع</h3>
+                <p>أدخل بياناتك وسيتواصل معك المشرف التمريضي فوراً لتحديد الكادر المناسب لحالة مريضك.</p>
+                <form id="quickBookingForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group">
+                        <label>الاسم الكريم</label>
+                        <input type="text" id="clientName" required placeholder="أدخل اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف (واتساب)</label>
+                        <input type="tel" id="clientPhone" required placeholder="07XXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>المنطقة / المحافظة</label>
+                        <select id="clientArea">
+                            <option value="الزرقاء">الزرقاء</option>
+                            <option value="عمان">عمان</option>
+                            <option value="إربد">إربد</option>
+                            <option value="محافظة أخرى">محافظة أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الخدمة المطلوبة</label>
+                        <select id="serviceType">
+                            <option value="تمريض منزلي 12 ساعة (850 دينار)">تمريض منزلي 12 ساعة (850 دينار)</option>
+                            <option value="تمريض منزلي 24 ساعة (1650 دينار)">تمريض منزلي 24 ساعة (1650 دينار)</option>
+                            <option value="مرافق مريض 8 ساعات (550 دينار)">مرافق مريض 8 ساعات (550 دينار)</option>
+                            <option value="زيارة تمريضية / سحب دم / أشعة">زيارة تمريضية / سحب دم / أشعة</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-whatsapp btn-block"><i class="fab fa-whatsapp"></i> إرسال الطلب عبر الواتساب</button>
+                </form>
+            </div>
+
+            <!-- الأسئلة الشائعة -->
+            <div class="faq-box">
+                <h3>الأسئلة الشائعة</h3>
+                <div class="faq-item">
+                    <h4>هل يتوفر لديكم ممرضات إناث وممرضين ذكور؟</h4>
+                    <p>نعم، يتوفر لدينا كادر متكامل من الممرضين والممرضات القانونيين، بالإضافة إلى مرافقين ومرافقات، لتلبية رغبة الأسرة وخصوصية المريض.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>هل الكادر التمريضي مرخص رسمياً؟</h4>
+                    <p>بكل تأكيد. مؤسسة بلسم الشفاء مرخصة من وزارة الصحة الأردنية، وجميع كوادرنا التمريضية حاصلون على مزاولة مهنة سارية المفعول من نقابة الممرضين.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>كم يستغرق وصول الممرض بعد الطلب؟</h4>
+                    <p>في محافظتي الزرقاء وعمان، يتم التنسيق وتأمين الكادر خلال ساعات قليلة من تأكيد الطلب، مع توفر خدمة الطوارئ والتنسيق على مدار 24 ساعة.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container text-center">
-            <p>© 2026 مركز بلسم الشفاء للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+            <p>مؤسسة بلسم الشفاء للتمريض المنزلي - الزرقاء، الأردن | هاتف: <a href="tel:0789188998" style="color: #00A3C4;">0789188998</a></p>
+            <p style="font-size: 0.85rem; margin-top: 8px; opacity: 0.8;">© 2026 جميع الحقوق محفوظة. مرخص حسب الأصول من وزارة الصحة الأردنية.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب" onclick="fbq('track', 'Lead');">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- أزرار التواصل العائمة -->
+    <div class="floating-buttons">
+        <a href="tel:0789188998" class="phone-float" title="اتصال مباشر" onclick="fbq('track', 'Contact');">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب" onclick="fbq('track', 'Lead');">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- كود إرسال النموذج للواتساب -->
+    <script>
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const area = document.getElementById('clientArea').value;
+            const service = document.getElementById('serviceType').value;
+
+            const message = `مرحباً بلسم الشفاء، أرغب بطلب خدمة:%0A` +
+                            `👤 *الاسم:* ${name}%0A` +
+                            `📱 *الهاتف:* ${phone}%0A` +
+                            `📍 *المنطقة:* ${area}%0A` +
+                            `🩺 *الخدمة:* ${service}`;
+
+            window.open(`https://wa.me/962789188998?text=${message}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
