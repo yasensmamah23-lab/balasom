@@ -1,9 +1,10 @@
 :root {
-    --primary: #1A365D;
-    --secondary: #00A3C4;
-    --accent: #25D366;
-    --dark: #2D3748;
-    --light: #F7FAFC;
+    --primary: #102A43;       /* كحلي ملكي داكن مطابق للوجو */
+    --secondary: #C59B27;     /* ذهبي فخم مطابق للوجو */
+    --gold-light: #D4AF37;    /* ذهبي فاتح للتفاصيل */
+    --cream: #FAF8F5;         /* كريمي دافئ للخلفيات */
+    --accent: #25D366;        /* أخضر واتساب */
+    --dark: #1E293B;
     --white: #FFFFFF;
     --font-family: 'Cairo', sans-serif;
 }
@@ -35,46 +36,51 @@ a {
 
 .top-bar {
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--cream);
     text-align: center;
     padding: 8px 10px;
     font-size: 0.85rem;
+    border-bottom: 2px solid var(--secondary);
 }
 .top-bar a {
-    color: var(--secondary);
+    color: var(--gold-light);
     font-weight: bold;
 }
 
 .header {
     background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 12px rgba(16, 42, 67, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 12px 0;
+    padding: 15px 0;
+    gap: 12px;
 }
-.logo h2 {
-    color: var(--primary);
-    font-size: 1.4rem;
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.logo span {
-    color: var(--secondary);
-    font-size: 0.9rem;
+.logo img {
+    height: 95px;
+    width: auto;
     display: block;
 }
 .nav {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 18px;
 }
 .nav a {
-    font-weight: 600;
-    color: var(--dark);
+    font-weight: 700;
+    color: var(--primary);
     transition: color 0.3s;
     white-space: nowrap;
     font-size: 0.95rem;
@@ -83,63 +89,80 @@ a {
     color: var(--secondary);
 }
 .btn-nav {
-    background: var(--secondary);
-    color: var(--white) !important;
-    padding: 6px 14px;
-    border-radius: 5px;
+    background: linear-gradient(135deg, var(--secondary), var(--gold-light));
+    color: var(--primary) !important;
+    padding: 7px 18px;
+    border-radius: 6px;
     white-space: nowrap !important;
     display: inline-block !important;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(197, 155, 39, 0.3);
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(26,54,93,0.95), rgba(0,163,196,0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1350&q=80') center/cover;
+    background: linear-gradient(135deg, rgba(16, 42, 67, 0.96), rgba(26, 54, 93, 0.88)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1350&q=80') center/cover;
     color: var(--white);
-    padding: 80px 0;
+    padding: 75px 0;
     text-align: center;
+    border-bottom: 4px solid var(--secondary);
 }
 .badge {
-    background: rgba(255,255,255,0.2);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    background: rgba(197, 155, 39, 0.2);
+    border: 1px solid var(--gold-light);
+    color: var(--gold-light);
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-size: 0.88rem;
+    font-weight: 700;
 }
 .hero h1 {
     font-size: 2.2rem;
     margin: 20px 0;
     font-weight: 800;
+    color: var(--cream);
 }
 .hero p {
     font-size: 1.05rem;
     max-width: 800px;
     margin: 0 auto 30px;
+    color: #E2E8F0;
 }
 .hero-btns {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 10px 24px;
-    border-radius: 5px;
-    font-weight: bold;
+    padding: 11px 26px;
+    border-radius: 6px;
+    font-weight: 700;
     display: inline-block;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     white-space: nowrap;
+}
+.btn:hover {
+    transform: translateY(-2px);
 }
 .btn-primary {
     background: var(--primary);
-    color: var(--white);
+    color: var(--gold-light);
+    border: 1px solid var(--secondary);
+}
+.btn-gold {
+    background: linear-gradient(135deg, var(--secondary), var(--gold-light));
+    color: var(--primary);
+    font-weight: 800;
 }
 .btn-whatsapp {
     background-color: var(--accent);
     color: var(--white);
 }
 .btn-outline {
-    border: 2px solid var(--white);
-    color: var(--white);
+    border: 2px solid var(--gold-light);
+    color: var(--gold-light);
 }
 .btn-block {
     display: block;
@@ -152,9 +175,9 @@ a {
 }
 
 .trust-bar {
-    background: var(--white);
-    padding: 35px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: var(--cream);
+    padding: 40px 0;
+    border-bottom: 1px solid #EAE4D7;
 }
 .trust-grid {
     display: grid;
@@ -169,22 +192,45 @@ a {
 .trust-item h3 {
     color: var(--primary);
     margin-bottom: 5px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+.trust-item p {
+    color: #4A5568;
+    font-size: 0.95rem;
 }
 
 .section {
-    padding: 60px 0;
+    padding: 65px 0;
 }
 .bg-light {
-    background-color: var(--light);
+    background-color: var(--cream);
 }
 .section-title {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 .section-title h2 {
     color: var(--primary);
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
+.section-title p {
+    color: #5A6577;
+    margin-top: 10px;
 }
 
 .services-grid {
@@ -194,9 +240,10 @@ a {
 }
 .service-card {
     background: var(--white);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 28px 25px;
+    border-radius: 10px;
+    border-top: 3px solid var(--secondary);
+    box-shadow: 0 4px 15px rgba(16, 42, 67, 0.05);
 }
 .card-icon {
     font-size: 2.3rem;
@@ -206,6 +253,7 @@ a {
     color: var(--primary);
     margin-bottom: 8px;
     font-size: 1.15rem;
+    font-weight: 700;
 }
 
 /* تنسيق قسم الباقات والأسعار */
@@ -217,40 +265,43 @@ a {
 }
 .pricing-card {
     background: var(--white);
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 30px 25px;
+    border: 1px solid #E6DEC8;
+    border-radius: 12px;
+    padding: 32px 25px;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 15px rgba(16, 42, 67, 0.05);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .pricing-card.featured {
+    background: var(--cream);
     border: 2px solid var(--secondary);
-    box-shadow: 0 10px 25px rgba(0,163,196,0.15);
-    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(197, 155, 39, 0.18);
+    transform: translateY(-6px);
 }
 .popular-badge {
     position: absolute;
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--secondary);
-    color: var(--white);
-    padding: 4px 16px;
+    background: linear-gradient(135deg, var(--primary), #1E3A5F);
+    color: var(--gold-light);
+    border: 1px solid var(--secondary);
+    padding: 4px 18px;
     border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: bold;
+    font-weight: 800;
 }
 .pricing-header h3 {
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    font-weight: 800;
     margin-bottom: 5px;
 }
 .pricing-header .subtitle {
-    color: #718096;
+    color: #64748B;
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
@@ -259,13 +310,13 @@ a {
     font-weight: 800;
     color: var(--primary);
     margin-bottom: 20px;
-    border-bottom: 1px solid #EDF2F7;
+    border-bottom: 1px solid #E6DEC8;
     padding-bottom: 15px;
 }
 .pricing-header .price span {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #718096;
+    color: var(--secondary);
 }
 .pricing-features {
     list-style: none;
@@ -291,17 +342,18 @@ a {
 .media-card {
     background: var(--white);
     padding: 25px;
-    border-radius: 8px;
+    border-radius: 10px;
     border-right: 4px solid var(--secondary);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.05);
 }
 .media-badge {
     display: inline-block;
-    background: rgba(0,163,196,0.1);
+    background: var(--cream);
     color: var(--secondary);
-    font-weight: bold;
+    border: 1px solid #E6DEC8;
+    font-weight: 700;
     font-size: 0.8rem;
-    padding: 3px 10px;
+    padding: 3px 12px;
     border-radius: 4px;
     margin-bottom: 10px;
 }
@@ -319,15 +371,16 @@ a {
     align-items: start;
 }
 .booking-box, .faq-box {
-    background: var(--white);
+    background: var(--cream);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #EDF2F7;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(16, 42, 67, 0.05);
+    border: 1px solid #E6DEC8;
 }
 .booking-box h3, .faq-box h3 {
     color: var(--primary);
     font-size: 1.4rem;
+    font-weight: 800;
     margin-bottom: 10px;
 }
 .booking-box p {
@@ -340,7 +393,7 @@ a {
 }
 .form-group label {
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 5px;
     font-size: 0.9rem;
     color: var(--primary);
@@ -350,6 +403,7 @@ a {
     padding: 10px 12px;
     border: 1px solid #CBD5E0;
     border-radius: 6px;
+    background: var(--white);
     font-family: var(--font-family);
     font-size: 0.95rem;
 }
@@ -358,7 +412,7 @@ a {
     border-color: var(--secondary);
 }
 .faq-item {
-    border-bottom: 1px solid #EDF2F7;
+    border-bottom: 1px solid #E6DEC8;
     padding: 15px 0;
 }
 .faq-item:last-child {
@@ -375,9 +429,10 @@ a {
 }
 
 .map-container {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(16, 42, 67, 0.08);
     border-radius: 10px;
     overflow: hidden;
+    border: 2px solid #E6DEC8;
 }
 
 .about-content {
@@ -387,9 +442,10 @@ a {
 }
 .ceo-quote {
     margin-top: 25px;
-    background: var(--light);
+    background: var(--cream);
     border-right: 4px solid var(--secondary);
-    padding: 18px;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .contact-grid {
@@ -397,22 +453,12 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
-.contact-action {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-.btn-large {
-    width: 100%;
-    margin-top: 15px;
-}
 
 .footer {
     background: var(--primary);
-    color: var(--white);
-    padding: 25px 0;
+    color: var(--cream);
+    padding: 30px 0;
+    border-top: 4px solid var(--secondary);
 }
 .text-center { text-align: center; }
 .margin-top { margin-top: 25px; }
@@ -431,47 +477,39 @@ a {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    color: #FFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.28);
     transition: transform 0.2s;
 }
 .whatsapp-float {
     background-color: #25D366;
+    color: #FFF;
     font-size: 28px;
 }
 .phone-float {
     background-color: var(--primary);
+    color: var(--gold-light);
+    border: 2px solid var(--secondary);
     font-size: 20px;
 }
 .whatsapp-float:hover, .phone-float:hover {
     transform: scale(1.08);
 }
 
-/* التنسيق الخاص بالهواتف لمنع الانقسام والتشوه */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 12px;
+    .logo img {
+        height: 85px;
     }
     .nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 12px;
-        width: 100%;
+        gap: 8px 14px;
     }
     .nav a {
-        font-size: 0.85rem;
-    }
-    .btn-nav {
-        padding: 5px 12px;
-        font-size: 0.85rem;
+        font-size: 0.88rem;
     }
     .hero h1 {
-        font-size: 1.6rem;
+        font-size: 1.65rem;
     }
     .hero-btns {
         flex-direction: column;
