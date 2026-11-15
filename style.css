@@ -282,6 +282,35 @@ a {
     margin-left: 8px;
 }
 
+/* تنسيق قسم التوعية الطبية */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.media-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-right: 4px solid var(--secondary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+.media-badge {
+    display: inline-block;
+    background: rgba(0,163,196,0.1);
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.media-card h3 {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
 /* تنسيق نموذج الحجز والأسئلة الشائعة */
 .booking-faq-grid {
     display: grid;
@@ -294,6 +323,7 @@ a {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #EDF2F7;
 }
 .booking-box h3, .faq-box h3 {
     color: var(--primary);
@@ -344,6 +374,12 @@ a {
     color: #4A5568;
 }
 
+.map-container {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .about-content {
     max-width: 900px;
     margin: 0 auto;
@@ -366,6 +402,7 @@ a {
     padding: 25px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .btn-large {
     width: 100%;
@@ -375,7 +412,7 @@ a {
 .footer {
     background: var(--primary);
     color: var(--white);
-    padding: 20px 0;
+    padding: 25px 0;
 }
 .text-center { text-align: center; }
 .margin-top { margin-top: 25px; }
