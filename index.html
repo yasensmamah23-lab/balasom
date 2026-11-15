@@ -33,7 +33,7 @@
       },
       "areaServed": ["الزرقاء", "عمان", "الأردن"],
       "openingHours": "Mo-Su 00:00-23:59",
-      "priceRange": "550 JOD - 1650 JOD"
+      "priceRange": "350 JOD - 1650 JOD"
     }
     </script>
     
@@ -161,29 +161,33 @@
         </div>
     </section>
 
-    <!-- قسم الباقات الشهرية -->
+    <!-- قسم الباقات والأسعار المعتمدة -->
     <section id="packages" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>الباقات الشهرية المعتمدة</h2>
+                <h2>الباقات والأسعار المعتمدة</h2>
                 <p>خطط رعاية مرنة وواضحة تناسب حالة المريض وميزانية الأسرة</p>
             </div>
             <div class="pricing-grid">
+                <!-- باقة المرافقين (غير ممرضين) بجميع الخيارات -->
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>باقة المرافق الشخصي</h3>
-                        <p class="subtitle">رعاية ومؤانسة غير تمريضية</p>
-                        <div class="price">550 <span>دينار / شهرياً</span></div>
+                        <h3>خدمة المرافقين (غير ممرضين)</h3>
+                        <p class="subtitle">متوفر مرافقين ومرافقات باليومية أو الشهرية</p>
+                        <div class="price" style="font-size: 1.35rem; line-height: 1.6;">
+                            تبدأ من 350 <span>دينار / شهرياً</span>
+                        </div>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> شفت 8 ساعات يومياً</li>
-                        <li><i class="fas fa-check"></i> المساعدة في الحركة والنظافة الشخصية</li>
-                        <li><i class="fas fa-check"></i> تذكير بمواعيد الأدوية والوجبات</li>
-                        <li><i class="fas fa-check"></i> متوفر مرافقين ومرافقات</li>
+                        <li><i class="fas fa-check"></i> <strong>8 ساعات:</strong> 20 دينار يومياً (شهرياً 350 دينار)</li>
+                        <li><i class="fas fa-check"></i> <strong>12 ساعة:</strong> 25 دينار يومياً (شهرياً 400 دينار)</li>
+                        <li><i class="fas fa-check"></i> <strong>24 ساعة:</strong> 30 دينار يومياً (شهرياً 450 دينار)</li>
+                        <li><i class="fas fa-shield-alt"></i> يتم التحقق الأمني لجميع المرافقين مع إمكانية الاطلاع على الوثائق</li>
                     </ul>
-                    <a href="https://wa.me/962789188998?text=مرحباً،%20أرغب%20بحجز%20باقة%20المرافق%20الشخصي%20(8%20ساعات%20-%20550%20دينار)" class="btn btn-primary btn-block" target="_blank" onclick="fbq('track', 'Lead');">اطلب هذه الباقة</a>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أرغب%20بالاستفسار%20وحجز%20خدمة%20المرافقين%20(غير%20ممرضين)" class="btn btn-primary btn-block" target="_blank" onclick="fbq('track', 'Lead');">اطلب خدمة مرافق الآن</a>
                 </div>
 
+                <!-- باقة التمريض 12 ساعة (الأكثر طلباً) -->
                 <div class="pricing-card featured">
                     <div class="popular-badge">الأكثر طلباً</div>
                     <div class="pricing-header">
@@ -200,6 +204,7 @@
                     <a href="https://wa.me/962789188998?text=مرحباً،%20أرغب%20بحجز%20باقة%20التمريض%20المنزلي%2012%20ساعة%20(850%20دينار)" class="btn btn-whatsapp btn-block" target="_blank" onclick="fbq('track', 'Lead');">اطلب هذه الباقة الآن</a>
                 </div>
 
+                <!-- باقة التمريض 24 ساعة -->
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>تمريض منزلي شامل (24 ساعة)</h3>
@@ -272,9 +277,11 @@
                     <div class="form-group">
                         <label>الخدمة المطلوبة</label>
                         <select id="serviceType">
-                            <option value="تمريض منزلي 12 ساعة (850 دينار)">تمريض منزلي 12 ساعة (850 دينار)</option>
-                            <option value="تمريض منزلي 24 ساعة (1650 دينار)">تمريض منزلي 24 ساعة (1650 دينار)</option>
-                            <option value="مرافق مريض 8 ساعات (550 دينار)">مرافق مريض 8 ساعات (550 دينار)</option>
+                            <option value="تمريض منزلي 12 ساعة (850 دينار شهرياً)">تمريض منزلي 12 ساعة (850 دينار شهرياً)</option>
+                            <option value="تمريض منزلي 24 ساعة (1650 دينار شهرياً)">تمريض منزلي 24 ساعة (1650 دينار شهرياً)</option>
+                            <option value="مرافق مريض 8 ساعات (20 يومي / 350 شهري)">مرافق مريض 8 ساعات (20 يومي / 350 شهري)</option>
+                            <option value="مرافق مريض 12 ساعة (25 يومي / 400 شهري)">مرافق مريض 12 ساعة (25 يومي / 400 شهري)</option>
+                            <option value="مرافق مريض 24 ساعة (30 يومي / 450 شهري)">مرافق مريض 24 ساعة (30 يومي / 450 شهري)</option>
                             <option value="زيارة تمريضية / سحب دم / أشعة">زيارة تمريضية / سحب دم / أشعة</option>
                         </select>
                     </div>
@@ -290,7 +297,7 @@
                 </div>
                 <div class="faq-item">
                     <h4>هل الكادر التمريضي مرخص رسمياً؟</h4>
-                    <p>بكل تأكيد. مؤسسة بلسم الشفاء مرخصة من وزارة الصحة الأردنية، وجميع كوادرنا التمريضية حاصلون على مزاولة مهنة سارية المفعول من نقابة الممرضين.</p>
+                    <p>بكل تأكيد. مؤسسة بلسم الشفاء مرخصة من وزارة الصحة الأردنية، وجميع كوادرنا التمريضية حاصلون على مزاولة مهنة سارية المفعول من نقابة الممرضين، ويتم التحقق الأمني لجميع المرافقين.</p>
                 </div>
                 <div class="faq-item">
                     <h4>كم يستغرق وصول الممرض بعد الطلب؟</h4>
