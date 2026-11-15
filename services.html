@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدماتنا | مركز بلسم الشفاء للتمريض المنزلي</title>
+    <title>خدماتنا السريرية | مؤسسة بلسم الشفاء للتمريض المنزلي</title>
+    <meta name="description" content="استعرض خدمات مؤسسة بلسم الشفاء للتمريض المنزلي في الزرقاء وعمان: رعاية كبار السن والجلطات، سحب عينات الدم، الأشعة المنزلية، العناية بالجروح، ومرافقي المرضى.">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1509299491031036');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1509299491031036&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <div class="top-bar">
-        <span>📞 للتنسيق التمريضي المباشر: <a href="tel:0789188998">0789188998</a> | نغطي عمان والزرقاء وجميع محافظات المملكة</span>
+        <span>📞 للتنسيق التمريضي المباشر 24/7: <a href="tel:0789188998" onclick="fbq('track', 'Contact');">0789188998</a> | الزرقاء (قرب مستشفى جبل الزيتون) وعمان وكافة المحافظات</span>
     </div>
 
     <header class="header">
@@ -23,57 +45,90 @@
                 <a href="index.html">الرئيسية</a>
                 <a href="about.html">عن المركز</a>
                 <a href="services.html" class="active">خدماتنا</a>
-                <a href="contact.html" class="btn-nav">اتصل بنا</a>
+                <a href="index.html#packages">الباقات</a>
+                <a href="contact.html">تواصل معنا</a>
+                <a href="index.html#booking" class="btn-nav">احجز الآن</a>
             </nav>
         </div>
     </header>
 
-    <section class="services section">
+    <section class="services section bg-light">
         <div class="container">
             <div class="section-title">
                 <h2>خدماتنا السريرية الشاملة</h2>
-                <p>بروتوكولات طبية وتمريضية معتمدة لضمان الراحة والتعافي التام في المنزل</p>
+                <p>بروتوكولات طبية وتمريضية معتمدة من وزارة الصحة الأردنية لضمان الراحة والتعافي التام في المنزل</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-icon">🩸</div>
-                    <h3>سحب عينات الدم المنزلية</h3>
-                    <p>سحب كافة عينات الفحوصات المخبرية من المنزل بأعلى معايير التعقيم وإرسالها للمختبرات المعتمدة مع إرسال النتائج للمريض فوراً.</p>
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">🧠</div>
+                        <h3>رعاية كبار السن ومرضى الجلطات الدماغية</h3>
+                        <p>إدارة الحالات المعقدة وحالات الشلل النصفي، منع قروح الفراش، العناية بالأنبوب المعدي والقسطرة، وتحفيز التعافي الحركي.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمة%20رعاية%20كبار%20السن%20ومرضى%20الجلطات" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🩻</div>
-                    <h3>تصوير الأشعة المنزلي والأيكو (X-Ray & Echo)</h3>
-                    <p>فحوصات الأشعة التلفزيونية والأشعة السينية المنزلية بأجهزة حديثة ومتنقلة مع تقارير طبية معتمدة من أطباء اختصاص.</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">🤝</div>
+                        <h3>توفير مرافقين ومرافقات (غير تمريض)</h3>
+                        <p>تأمين مرافقين ومرافقات بأعلى درجات الأمانة للقيام بالأنشطة اليومية، تقديم المساعدة الشخصية، وتوفير العناية غير الطبية للمريض.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20توفير%20مرافق%20أو%20مرافقة%20للمريض" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🤰</div>
-                    <h3>رعاية الأمهات الحوامل</h3>
-                    <p>متابعة حالات الحمل الحرج، إعطاء المغذيات والمحاليل الموصوفة، متابعة الضغط والسكري، والرعاية بعد الولادة القيصرية.</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">💉</div>
+                        <h3>التمريض المنزلي المباشر الشامل</h3>
+                        <p>متابعة العلامات الحيوية، إعطاء المحاليل والمضادات الوريدية، تركيب القسطرة، ورعاية مرضى الحالات الحادة بنظام الشفتات أو الزيارات.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20التمريض%20المنزلي%20المباشر" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">👶</div>
-                    <h3>العناية بالأطفال وحديثي الولادة</h3>
-                    <p>رعاية الأطفال والخدّج من قِبل ممرضات متخصصات، العناية بحديثي الولادة، إعطاء المطاعيم، والعناية بالصفار (الصفار المنزلي).</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">🩹</div>
+                        <h3>العناية بالجروح وقدم السكري</h3>
+                        <p>الغيار المعقم على الجروح الجراحية المعقدة، قروح الفراش، والعناية بالقدم السكرية بأحدث المواد والمستلزمات الطبية المعقمة.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20العناية%20بالجروح%20وقدم%20السكري" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🧠</div>
-                    <h3>رعاية كبار السن ومرضى الجلطات الدماغية</h3>
-                    <p>إدارة الحالات المعقدة وحالات الشلل النصفي، منع قروح الفراش، العناية بالأنبوب المعدي والقسطرة، وتحفيز التعافي الحركي.</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">🩸</div>
+                        <h3>سحب عينات الدم المنزلية</h3>
+                        <p>سحب كافة عينات الفحوصات المخبرية من المنزل بأعلى معايير التعقيم وإرسالها للمختبرات المعتمدة مع إرسال النتائج للمريض فوراً.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20طلب%20خدمة%20سحب%20عينات%20الدم%20المنزلية" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🤝</div>
-                    <h3>توفير مرافقين ومرافقات (غير تمريض)</h3>
-                    <p>تأمين مرافقين ومرافقات بأعلى درجات الأمانة للقيام بالأنشطة اليومية، تقديم المساعدة الشخصية، وتوفير العناية غير الطبية للمريض.</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">🩻</div>
+                        <h3>تصوير الأشعة المنزلي والأيكو (X-Ray & Echo)</h3>
+                        <p>فحوصات الأشعة التلفزيونية والأشعة السينية المنزلية بأجهزة حديثة ومتنقلة مع تقارير طبية معتمدة من أطباء اختصاص.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20طلب%20خدمة%20الأشعة%20المنزلية%20أو%20الأيكو" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">💉</div>
-                    <h3>التمريض المنزلي المباشر الشامل</h3>
-                    <p>متابعة العلامات الحيوية، إعطاء المحاليل والمضادات الوريدية، تركِيب القسطرة، ورعاية مرضى الحالات الحادة.</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">🤰</div>
+                        <h3>رعاية الأمهات الحوامل</h3>
+                        <p>متابعة حالات الحمل الحرج، إعطاء المغذيات والمحاليل الموصوفة، متابعة الضغط والسكري، والرعاية بعد الولادة القيصرية.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20رعاية%20الأمهات%20الحوامل" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">🩹</div>
-                    <h3>العناية بالجروح وقدم السكري</h3>
-                    <p>التغير المعقم على الجروح الجراحية المعقدة، قروح الفراش، والعناية بالقدم السكرية بأحدث المواد المعقمة.</p>
+
+                <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="card-icon">👶</div>
+                        <h3>العناية بالأطفال وحديثي الولادة</h3>
+                        <p>رعاية الأطفال والخدّج من قِبل ممرضات متخصصات، العناية بحديثي الولادة، إعطاء المطاعيم، والعناية بالصفار المنزلي.</p>
+                    </div>
+                    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20العناية%20بالأطفال%20وحديثي%20الولادة" class="btn btn-primary btn-block" style="margin-top: 15px; font-size: 0.9rem;" target="_blank" onclick="fbq('track', 'Lead');"><i class="fab fa-whatsapp"></i> اطلب الخدمة</a>
                 </div>
             </div>
         </div>
@@ -81,13 +136,20 @@
 
     <footer class="footer">
         <div class="container text-center">
-            <p>© 2026 مركز بلسم الشفاء للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+            <p>مؤسسة بلسم الشفاء للتمريض المنزلي - الزرقاء (قرب مستشفى جبل الزيتون) | هاتف: <a href="tel:0789188998" style="color: #00A3C4;">0789188998</a></p>
+            <p style="font-size: 0.85rem; margin-top: 8px; opacity: 0.8;">© 2026 جميع الحقوق محفوظة. مرخص حسب الأصول من وزارة الصحة الأردنية ونقابة الممرضين.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- أزرار التواصل العائمة -->
+    <div class="floating-buttons">
+        <a href="tel:0789188998" class="phone-float" title="اتصال مباشر" onclick="fbq('track', 'Contact');">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/962789188998?text=مرحباً،%20أود%20الاستفسار%20عن%20خدمات%20التمريض%20المنزلي" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب" onclick="fbq('track', 'Lead');">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
 </body>
 </html>
