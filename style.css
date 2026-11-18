@@ -341,3 +341,7 @@ body{font-weight:400;line-height:1.8}
 .hero .lead{margin-inline:auto}
 .hero .btn-lg{min-width:340px}
 @media (max-width:860px){.hero-in{padding:52px 0 56px}.hero .btn-lg{min-width:0}}
+.svc p{flex:1;padding-bottom:10px}
+.svc-link{display:block;margin:0 22px 20px;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:700;color:var(--wa-dark);text-decoration:none}
+.svc-link:hover{text-decoration:underline}
+@media (max-width:600px){.svc-link{margin:0 12px 14px;font-size:13.5px;padding-top:10px}}
